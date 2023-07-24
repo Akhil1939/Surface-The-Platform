@@ -1,4 +1,6 @@
+
 import { Component } from '@angular/core';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Surface-Ui';
+  title = 'Surface-U';
+ 
+  constructor() {
+    console.log(environment.apiKey)
+  }
+  
+
 }
