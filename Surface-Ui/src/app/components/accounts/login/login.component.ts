@@ -65,7 +65,7 @@ export class LoginComponent {
       theme: 'outline',
       size: 'large',
     });
-    // this.google.accounts.id.prompt(); // also display the One Tap dialog
+    this.google.accounts.id.prompt(); // also display the One Tap dialog
   }
   private handleCredentialResponse(response: any): void {
     console.log('Encoded JWT ID token: ' + response.credential);
