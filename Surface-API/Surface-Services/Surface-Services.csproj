@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Surface-Entities\Surface-Entities.csproj" />
+    <ProjectReference Include="..\Surface-Repositories\Surface-Repositories.csproj" />
+  </ItemGroup>
+
 </Project>

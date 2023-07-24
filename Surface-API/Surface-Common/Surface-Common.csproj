@@ -2,13 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <RootNamespace>Surface_Repositories</RootNamespace>
+    <RootNamespace>Surface_Common</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Surface-Entities\Surface-Entities.csproj" />
-  </ItemGroup>
 
 </Project>

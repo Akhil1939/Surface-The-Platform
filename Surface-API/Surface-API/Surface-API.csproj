@@ -11,4 +11,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Surface-Entities\Surface-Entities.csproj" />
+    <ProjectReference Include="..\Surface-Services\Surface-Services.csproj" />
+  </ItemGroup>
+
 </Project>
