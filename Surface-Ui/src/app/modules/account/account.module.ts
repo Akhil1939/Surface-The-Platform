@@ -7,6 +7,7 @@ import { LoginComponent } from '../../components/accounts/login/login.component'
 import { RegisterComponent } from '../../components/accounts/register/register.component';
 import { GoogleLoginProvider, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import { environment } from 'src/environments/environment.development';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { environment } from 'src/environments/environment.development';
   ],
   imports: [
     CommonModule,
-    AccountRoutingModule
+    AccountRoutingModule,
+    SharedModule
   ],
   providers:[
     
