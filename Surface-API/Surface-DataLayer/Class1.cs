@@ -1,4 +1,4 @@
-﻿namespace Surface.Entities
+﻿namespace Surface_DataLayer
 {
     public class Class1
     {
