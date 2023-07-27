@@ -1,4 +1,4 @@
-﻿namespace Surface_DataLayer
+﻿namespace Surface_DataAccessLayer
 {
     public class Class1
     {

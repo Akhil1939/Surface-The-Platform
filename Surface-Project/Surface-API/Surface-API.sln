@@ -7,13 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Surface-API", "Surface-API\
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Surface-UI", "..\Surface-UI\Surface-UI.esproj", "{F84F51AA-6FF0-4DD1-BE05-107962249FA3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Surface-Common", "Surface-Common\Surface-Common.csproj", "{36980BEA-3FBF-45E3-965E-4D879B73F42C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Surface-Common", "Surface-Common\Surface-Common.csproj", "{36980BEA-3FBF-45E3-965E-4D879B73F42C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Surface-BusinessLayer", "Surface-BusinessLayer\Surface-BusinessLayer.csproj", "{A12B95C9-9F79-4F35-8939-516E2025224F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Surface-BusinessLayer", "Surface-BusinessLayer\Surface-BusinessLayer.csproj", "{A12B95C9-9F79-4F35-8939-516E2025224F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Surface-DataAccessLayer", "Surface-DataAccessLayer\Surface-DataAccessLayer.csproj", "{FD096A12-F8B3-4412-B7FD-60BF29851009}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Surface-DataAccessLayer", "Surface-DataAccessLayer\Surface-DataAccessLayer.csproj", "{FD096A12-F8B3-4412-B7FD-60BF29851009}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Surface-Entities", "Surface-Entities\Surface-Entities.csproj", "{B00F26C4-374B-49AA-87A4-60D6DD5E1695}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Surface-Entities", "Surface-Entities\Surface-Entities.csproj", "{B00F26C4-374B-49AA-87A4-60D6DD5E1695}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

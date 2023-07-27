@@ -1,4 +1,4 @@
-﻿namespace Surface_Services
+﻿namespace Surface_Entities
 {
     public class Class1
     {
