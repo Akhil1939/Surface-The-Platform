@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <RootNamespace>Surface_DataLayer</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Surface-Common\Surface-Common.csproj" />
+    <ProjectReference Include="..\Surface-Entities\Surface-Entities.csproj" />
+  </ItemGroup>
+
+</Project>
