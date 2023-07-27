@@ -1,1 +1,22 @@
-<p>login works!</p>
+<div [formGroup]="loginForm" >
+  <div class="email">
+    <app-text-field
+      [parentForm]="loginForm"
+      [controlName]="'email'"
+      [label]="'Email'"
+      [placeholder]="'please enter your email'"
+    ></app-text-field>
+  </div>
+  <div class="password">
+    <app-text-field
+      [parentForm]="loginForm"
+      [controlName]="'password'"
+      [label]="'password'"
+      [placeholder]="'please enter your password'"
+      [type]="'password'"
+    ></app-text-field>
+  </div>
+  <div class="btn" (click)="login()">
+    Login
+  </div>
+</div>

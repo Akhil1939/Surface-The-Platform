@@ -1,0 +1,7 @@
+.btn{
+    background-color: var(--btn-red);
+}
+.btn:hover{
+    background-color: var(--btn-red);
+    opacity: 0.8;
+}

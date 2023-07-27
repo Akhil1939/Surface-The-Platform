@@ -1,1 +1,18 @@
-<p>text-field works!</p>
+<!-- <form class="input-text-field" [FormGroup]="parentForm"> -->
+  <mat-form-field appearance="outline" class="w-100">
+    <mat-label>{{ label }}</mat-label>
+    <input
+      matInput
+      [formControl]="control"
+      [placeholder]="placeholder"
+      [type]="type"
+      [disabled]="disabled"
+    />
+  </mat-form-field>
+  <!-- <mat-error *ngIf="parentForm.get('email').hasError('pattern')">
+    {{ label }} data must be follow valid pattern
+  </mat-error>
+  <mat-error *ngIf="parentForm.get(controlName).hasError('email')">
+    {{ label }} must be a valid email address
+  </mat-error> -->
+<!-- </form> -->
