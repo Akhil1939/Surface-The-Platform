@@ -1,4 +1,4 @@
-<div [formGroup]="loginForm" >
+<div [formGroup]="loginForm">
   <div class="email">
     <app-text-field
       [parentForm]="loginForm"
@@ -16,7 +16,20 @@
       [type]="'password'"
     ></app-text-field>
   </div>
-  <div class="btn" (click)="login()">
-    Login
+  <div class="remember-me">
+    <!-- <mat-checkbox>Remember me</mat-checkbox> -->
+  </div>
+  <div class="row px-3">
+    <div class="btn" (click)="login()">Login</div>
+  </div>
+  <div class="row px-3">
+    <div class="google-login col text-center">
+      <app-google></app-google>
+    </div>
+    <div class="microsoft-login col text-center">M</div>
+    <div class="facebook-login col text-center"><app-facebook></app-facebook></div>
+  </div>
+  <div class="row px-3">
+    <a [routerLink]="['/account/register']">register</a>
   </div>
 </div>

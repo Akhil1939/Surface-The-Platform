@@ -6,12 +6,20 @@ import { LoginComponent } from './components/login/login.component';
 import { AccountLayoutComponent } from './components/layout/account-layout/account-layout.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegisterComponent } from './components/register/register.component';
+import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
+import { environment } from 'src/environments/environment.development';
+import { GoogleComponent } from './components/socialLogins/google/google.component';
+import { FacebookComponent } from './components/socialLogins/facebook/facebook.component';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
     AccountLayoutComponent,
+    RegisterComponent,
+    GoogleComponent,
+    FacebookComponent,
 
   ],
   imports: [
@@ -19,6 +27,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     CommonModule,
     AccountRoutingModule
-  ]
+  ],
+  
 })
 export class AccountModule { }
