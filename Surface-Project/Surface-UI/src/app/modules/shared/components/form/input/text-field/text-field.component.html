@@ -8,11 +8,17 @@
       [type]="type"
       [disabled]="disabled"
     />
-  <mat-error *ngIf="parentForm.get('email').hasError('pattern')">
+  <mat-error *ngIf="parentForm.get(controlName).hasError('pattern')">
     {{ label }} data must be follow valid pattern
   </mat-error>
   <mat-error *ngIf="parentForm.get(controlName).hasError('email')">
     {{ label }} must be a valid email address
+  </mat-error>
+  <mat-error *ngIf="parentForm.get(controlName).hasError('required')">
+    {{ label }} is required
+  </mat-error>
+  <mat-error *ngIf="parentForm.get(controlName).hasError('minlength')">
+    {{ label }} must be at least {{ parentForm.get(controlName).errors.minlength.requiredLength }} characters
   </mat-error>
 </mat-form-field>
 <!-- </form> -->
