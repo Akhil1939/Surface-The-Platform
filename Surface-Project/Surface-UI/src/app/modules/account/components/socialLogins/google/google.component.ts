@@ -4,9 +4,11 @@ import { ScriptService } from '../../../services/script-service.service';
 import { GoogleLoginProvider, SocialAuthService } from '@abacritt/angularx-social-login';
 import { environment } from 'src/environments/environment.development';
 import { Router } from '@angular/router';
+import { Google } from '../../../interfaces/google';
+
 
 declare let google: any;
-
+declare let gapi: any;
 @Component({
   selector: 'app-google',
   templateUrl: './google.component.html',
@@ -15,7 +17,6 @@ declare let google: any;
 export class GoogleComponent {
   SCRIPT_PATH='https://apis.google.com/js/platform.js'
   googleClientId: string = environment.googleClientId;
- 
     constructor(private renderer: Renderer2,
       private googleAuthService: SocialAuthService,
       private router: Router,
@@ -26,17 +27,18 @@ export class GoogleComponent {
       const scriptElement = this.scriptService.loadJsScript(this.renderer, this.SCRIPT_PATH);
       scriptElement.onload = () => {
        console.log('Google API Script loaded');
-        console.log(google);
-  
-        // Load the JavaScript client library.
-        // (the init() method has been omitted for brevity)
+      
+       setTimeout(() => {
+      
         if (google?.accounts) {
-          // Load the JavaScript client library.
-          // (the init() method has been omitted for brevity)
-          google.load('client', this.initializeGoogleSignIn.bind(this)); // Bind 'this' to the function
+         console.log("Google",google);
+         console.log("google account",google.accounts)
+         console.log("gapi",gapi)
+          gapi.load('client', this.initializeGoogleSignIn.bind(this)); // Bind 'this' to the function
         } else {
           console.log('Google Accounts namespace not available.');
         }
+      }, 500);
       }
       scriptElement.onerror = () => {
         console.log('Could not load the Google API Script!');
@@ -56,7 +58,8 @@ export class GoogleComponent {
       const buttonDiv = this.elementRef.nativeElement.querySelector('#googleSignInButton');
       google.accounts.id.renderButton(buttonDiv, {
         theme: 'outline',
-        size: 'large',
+        
+        type:'icon',
       });
       google.accounts.id.prompt(); // also display the One Tap dialog
     }
