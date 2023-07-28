@@ -11,6 +11,9 @@ import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
 import { environment } from 'src/environments/environment.development';
 import { GoogleComponent } from './components/socialLogins/google/google.component';
 import { FacebookComponent } from './components/socialLogins/facebook/facebook.component';
+import { MicrosoftComponent } from './components/socialLogins/microsoft/microsoft.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 
 @NgModule({
@@ -20,6 +23,9 @@ import { FacebookComponent } from './components/socialLogins/facebook/facebook.c
     RegisterComponent,
     GoogleComponent,
     FacebookComponent,
+    MicrosoftComponent,
+    ResetPasswordComponent,
+    ForgotPasswordComponent,
 
   ],
   imports: [
