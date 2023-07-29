@@ -1,0 +1,40 @@
+<div [formGroup]="loginForm">
+  <div class="email">
+    <app-text-field
+      [parentForm]="loginForm"
+      [controlName]="'email'"
+      [label]="'Email'"
+      [placeholder]="'please enter your email'"
+    ></app-text-field>
+  </div>
+  <div class="password">
+    <app-text-field
+      [parentForm]="loginForm"
+      [controlName]="'password'"
+      [label]="'password'"
+      [placeholder]="'please enter your password'"
+      [type]="'password'"
+    ></app-text-field>
+  </div>
+  <div class="remember-me">
+    <!-- <mat-checkbox>Remember me</mat-checkbox> -->
+  </div>
+  <div class="row px-3">
+    <div class="btn text-light" (click)="login()">Login</div>
+  </div>
+  <div class="row px-3 mt-2">
+    <div class="google-login col text-center">
+      <app-google></app-google>
+    </div>
+    <div class="microsoft-login col text-center">
+      <app-microsoft></app-microsoft>
+    </div>
+    <div class="facebook-login col text-center">
+      <app-facebook></app-facebook>
+    </div>
+  </div>
+  <div class="row px-3">
+    <a [routerLink]="['/account/forgot-password']">forgot password?</a>
+    <a [routerLink]="['/account/register']">register</a>
+  </div>
+</div>
