@@ -1,1 +1,66 @@
-<p>register works!</p>
+<div class="form-title row text-center mb-4">
+  <h3>Registration</h3>
+</div>
+<div class="registrationForm" [formGroup]="registrationForm">
+  <div class="name row">
+    <app-text-field
+      class="col-12 col-md-6"
+      [parentForm]="registrationForm"
+      [controlName]="'firstName'"
+      [label]="'First Name'"
+      [placeholder]="'please enter your first name'"
+    ></app-text-field>
+    <app-text-field
+      class="col-12 col-md-6"
+      [parentForm]="registrationForm"
+      [controlName]="'lastName'"
+      [label]="'Last Name'"
+      [placeholder]="'please enter your last name'"
+    ></app-text-field>
+  </div>
+  <div class="email">
+    <app-text-field
+      [parentForm]="registrationForm"
+      [controlName]="'email'"
+      [label]="'Email'"
+      [placeholder]="'please enter your email'"
+    ></app-text-field>
+  </div>
+  <div class="password row">
+    <app-text-field
+      class="col-12 col-md-6"
+      [parentForm]="registrationForm"
+      [controlName]="'password'"
+      [label]="'password'"
+      [placeholder]="'please enter your password'"
+      [type]="'password'"
+    ></app-text-field>
+    <app-text-field
+      class="col-12 col-md-6"
+      [parentForm]="registrationForm"
+      [controlName]="'confirmPassword'"
+      [label]="'confirm password'"
+      [placeholder]="'please confirm your password'"
+      [type]="'password'"
+    ></app-text-field>
+  </div>
+  <div class="row px-3">
+    <div class="btn text-light" (click)="register()">Register</div>
+  </div>
+  <div class="social-logins">
+    <div class="row px-3 mt-2">
+      <div class="google-login col text-center">
+        <app-google></app-google>
+      </div>
+      <div class="microsoft-login col text-center">
+        <app-microsoft></app-microsoft>
+      </div>
+      <div class="facebook-login col text-center">
+        <app-facebook></app-facebook>
+      </div>
+    </div>
+  </div>
+  <div class="login">
+    <a [routerLink]="['/account/login']">login</a>
+  </div>
+</div>

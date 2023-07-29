@@ -70,7 +70,7 @@ export class GoogleComponent {
     loginWithGoogle(): void {
       this.googleAuthService
         .signIn(GoogleLoginProvider.PROVIDER_ID)
-        .then((user) => {
+        .then((user:any) => {
           console.log(user);
         });
     }
