@@ -16,4 +16,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Surface-Entities\Surface-Entities.csproj" />
+  </ItemGroup>
+
 </Project>
