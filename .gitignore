@@ -481,3 +481,4 @@ $RECYCLE.BIN/
 Migrations/
 appsettings.Development.json
 appsettings.json
+/Surface-Project/Surface-API/Surface-API/appsettings.json
