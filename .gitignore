@@ -170,6 +170,7 @@ AutoTest.Net/
 # Installshield output folder
 [Ee]xpress/
 
+
 # DocProject is a documentation generator add-in
 DocProject/buildhelp/
 DocProject/Help/*.HxT
@@ -476,3 +477,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+#Ignore Migrations
+Migrations/
+appsettings.Development.json
+appsettings.json
+/Surface-Project/Surface-API/Surface-API/appsettings.json
