@@ -478,7 +478,3 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 #Ignore Migrations
-Migrations/
-appsettings.Development.json
-appsettings.json
-/Surface-Project/Surface-API/Surface-API/appsettings.json
