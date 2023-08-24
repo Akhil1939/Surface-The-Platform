@@ -1,0 +1,10 @@
+{
+    "login":"login",
+    "email":"email",
+    "email_placeholder":"please enter your email",
+    "password":"password",
+    "password_placeholder":"please enter your password",
+    "forgot_password":"forgot password",
+    "register":"register",
+    "logout":"logout"
+}

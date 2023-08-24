@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment.development';
   declarations: [
     AppComponent
   ],
-  imports: [
+  imports: [ 
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule
