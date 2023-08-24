@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LocalStorageService } from './modules/shared/services/local-storage.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Surface-UI';
+constructor(private storage:LocalStorageService ){
+  if(this.storage.get('language')===null){
+    this.storage.set('language','en')
+  }
+
+}
 }

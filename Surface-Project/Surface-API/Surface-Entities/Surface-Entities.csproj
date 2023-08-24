@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Surface-Common\Surface-Common.csproj" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.4" />
   </ItemGroup>
 
 </Project>
