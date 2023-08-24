@@ -3,16 +3,16 @@
     <app-text-field
       [parentForm]="loginForm"
       [controlName]="'email'"
-      [label]="'Email'"
-      [placeholder]="'please enter your email'"
+      [label]="translator.email"
+      [placeholder]="translator.email_placeholder"
     ></app-text-field>
   </div>
   <div class="password">
     <app-text-field
       [parentForm]="loginForm"
       [controlName]="'password'"
-      [label]="'password'"
-      [placeholder]="'please enter your password'"
+      [label]="translator.password"
+      [placeholder]="translator.password_placeholder"
       [type]="'password'"
     ></app-text-field>
   </div>
@@ -20,7 +20,7 @@
     <!-- <mat-checkbox>Remember me</mat-checkbox> -->
   </div>
   <div class="row px-3">
-    <div class="btn text-light" (click)="login()">Login</div>
+    <div class="btn text-light" (click)="login()">{{translator.login}}</div>
   </div>
   <div class="row px-3 mt-2">
     <div class="google-login col text-center">
@@ -34,7 +34,7 @@
     </div>
   </div>
   <div class="row px-3">
-    <a [routerLink]="['/account/forgot-password']">forgot password?</a>
-    <a [routerLink]="['/account/register']">register</a>
+    <a [routerLink]="['/account/forgot-password']">{{translator.forgot_password}} ?</a>
+    <a [routerLink]="['/account/register']">{{translator.register}}</a>
   </div>
 </div>
