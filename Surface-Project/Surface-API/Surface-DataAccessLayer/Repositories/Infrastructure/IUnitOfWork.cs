@@ -1,4 +1,6 @@
-﻿namespace Surface.DataAccessLayer.Repositories.Infrastructure
+﻿using Surface_DataAccessLayer.Repositories.Infrastructure;
+
+namespace Surface.DataAccessLayer.Repositories.Infrastructure
 {
     public interface IUnitOfWork
     {
@@ -8,5 +10,6 @@
         Task SaveAsync();
         Task RollbackAsync();
        
+        IUserRepo UserRepo { get; }
     }
 }

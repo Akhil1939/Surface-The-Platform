@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using surface.Entities.DataModels;
-using Surface.Common.Utils;
 using Surface.Entities.Configurations;
 using Surface.Entities.DataModels;
 using Surface_Entities.EntityConfigurations;
@@ -116,7 +115,6 @@ namespace Surface_Entities.Context
             modelBuilder.ApplyConfiguration(new StatusConfiguration());
             modelBuilder.ApplyConfiguration(new LoginProviderConfiguration());
             modelBuilder.ApplyConfiguration(new UserConfiguration());
-
         }
     }
 }

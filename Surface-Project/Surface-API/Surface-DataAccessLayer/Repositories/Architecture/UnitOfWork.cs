@@ -1,4 +1,6 @@
 ﻿using Surface.DataAccessLayer.Repositories.Infrastructure;
+using Surface_DataAccessLayer.Repositories.Architecture;
+using Surface_DataAccessLayer.Repositories.Infrastructure;
 using Surface_Entities.Context;
 
 namespace Surface.DataAccessLayer.Repositories.Architecture
@@ -6,7 +8,7 @@ namespace Surface.DataAccessLayer.Repositories.Architecture
     public class UnitOfWork : IUnitOfWork
     {
         private readonly SurfaceContext _context;
-       
+        private IUserRepo _userRepo;
 
         public UnitOfWork(SurfaceContext context)
         {
@@ -29,7 +31,12 @@ namespace Surface.DataAccessLayer.Repositories.Architecture
             return new BaseRepo<T>(_context);
         }
 
-        
-      
+        public IUserRepo UserRepo
+        {
+            get
+            {
+                return _userRepo ??= new UserRepo(_context);
+            }
+        }
     }
 }
