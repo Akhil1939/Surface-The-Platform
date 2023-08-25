@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using surface.Entities.DataModels;
 using Surface.Common.Utils;
+using Surface.Entities.Configurations;
 using Surface.Entities.DataModels;
+using Surface_Entities.EntityConfigurations;
 
 namespace Surface_Entities.Context
 {
@@ -26,10 +28,10 @@ namespace Surface_Entities.Context
                     long userId = GetUserId();
                     if (entityEntry.State == EntityState.Added)
                     {
-                        baseEntity.CreatedOn = DateTimeProvider.GetCurrentDateTime();
+                        baseEntity.CreatedOn = DateTime.UtcNow;
                         baseEntity.CreatedBy = userId;
                     }
-                    baseEntity.ModifiedOn = DateTimeProvider.GetCurrentDateTime();
+                    baseEntity.ModifiedOn = DateTime.UtcNow;
                     baseEntity.ModifiedBy = userId;
                 }
                 else if (IsTimeStampedEntity(entityEntry.Entity.GetType()))
@@ -37,9 +39,9 @@ namespace Surface_Entities.Context
                     var timeStampedEntity = (dynamic)entityEntry.Entity;
                     if (entityEntry.State == EntityState.Added)
                     {
-                        timeStampedEntity.CreatedOn = DateTimeProvider.GetCurrentDateTime();
+                        timeStampedEntity.CreatedOn = DateTime.UtcNow;
                     }
-                    timeStampedEntity.ModifiedOn = DateTimeProvider.GetCurrentDateTime();
+                    timeStampedEntity.ModifiedOn = DateTime.UtcNow;
                 }
                 else if (IsAuditableEntity(entityEntry.Entity.GetType()))
                 {
@@ -104,10 +106,17 @@ namespace Surface_Entities.Context
             //return long.Parse(_httpContextAccessor.HttpContext.User.Identity?.Name ?? "0");
         }
 
+        public DbSet<StatusGroup> StatusGroups { get; set; }
+        public DbSet<Status> Statuses { get; set; }
+        public DbSet<LoginProvider> LoginProviders { get; set; }
         public DbSet<User> User { get; set; }
-        public DbSet<Status> Status { get; set; }
-        public DbSet<StatusGroup> StatusGroup { get; set; }
-        public DbSet<LoginProvider> LoginProvider { get; set; }
-       
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new StatusGroupConfiguration());
+            modelBuilder.ApplyConfiguration(new StatusConfiguration());
+            modelBuilder.ApplyConfiguration(new LoginProviderConfiguration());
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
+
+        }
     }
 }
