@@ -21,7 +21,6 @@ namespace Surface.Common.Utils
             {
                 new Claim(ClaimTypes.Name,sessionUserModel.Id.ToString()),
                 new Claim(ClaimTypes.Email,sessionUserModel.Email),
-                new Claim(ClaimTypes.Role,sessionUserModel.Role.ToString()),
                 new Claim(ClaimTypes.NameIdentifier,sessionUserModel.Id.ToString()),
             };
 

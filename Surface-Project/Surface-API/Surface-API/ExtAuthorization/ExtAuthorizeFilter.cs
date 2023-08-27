@@ -1,6 +1,6 @@
 ﻿using API.ExtAuthorization;
 using Microsoft.AspNetCore.Mvc.Filters;
-using Microsoft.Extensions.Configuration.UserSecrets;
+
 using Services.Interfaces;
 
 namespace Surface.API.ExtAuthorization

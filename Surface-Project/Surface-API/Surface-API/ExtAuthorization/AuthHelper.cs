@@ -55,7 +55,6 @@ public class AuthHelper
         {
             Id = long.Parse(claims.FindFirstValue(ClaimTypes.NameIdentifier)),
             Email = claims.FindFirstValue(ClaimTypes.Email),
-            Role = int.Parse(claims.FindFirstValue(ClaimTypes.Role))
         };
 
         // Set the authenticated user
