@@ -18,7 +18,6 @@ namespace Surface.Entities.Configurations
             entity.Property(e => e.ModifiedOn).HasDefaultValueSql(SystemConstant.DEFAULT_DATETIME);
             entity.Property(e => e.StatusId).HasDefaultValue(StatusEnum.UserStatus.Active);
             entity.Property(e => e.AccessFailedCount).HasDefaultValue(SystemConstant.DEFAULT_ACCESS_FAILED_COUNT);
-            entity.Property(e => e.MustChangePassword).HasDefaultValue(SystemConstant.DEFAULT_MUST_CHANGE_PASSWORD);
             
           
             entity
@@ -46,7 +45,6 @@ namespace Surface.Entities.Configurations
                         LoginProviderId = 1,
                         StatusId = 1,
                         AccessFailedCount = 0,
-                        MustChangePassword = false,
                         Avatar="",
                         CreatedOn = DateTime.Now,
                     ModifiedOn = DateTime.Now,

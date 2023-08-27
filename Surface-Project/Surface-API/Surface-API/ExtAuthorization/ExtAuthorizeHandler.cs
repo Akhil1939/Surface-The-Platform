@@ -1,11 +1,7 @@
 ﻿
-using Common.CustomExceptions;
 
 using Microsoft.AspNetCore.Authorization;
 using Services.Interfaces;
-using Surface.Common.Constants;
-using Surface.Common.Enums;
-using Surface.Common.Utils.Models;
 
 namespace API.ExtAuthorization;
 
@@ -35,54 +31,9 @@ public class ExtAuthorizeHandler : AuthorizationHandler<ExtAuthorizeRequirement>
         new AuthHelper(_tokenBlacklistService).AuthorizeRequest(httpContext, _configuration);
 
 
-        if (CheckUserType(httpContext, requirement))
-        {
-            context.Succeed(requirement);
-            return Task.CompletedTask;
-        }
-
-        context.Fail();
+      
         return Task.CompletedTask;
     }
 
-    private static bool CheckUserType(HttpContext context, ExtAuthorizeRequirement requirement)
-    {
-        SessionUserModel? sessionUser = context.Items[SystemConstant.SESSION_USER] as SessionUserModel;
-
-        if (sessionUser == null)
-        {
-            return false;
-        }
-
-        // Handle the AdminPolicy requirement
-        if (requirement.PolicyName == SystemConstant.ADMIN_POLICY)
-        {
-            if (sessionUser.Role == (int)UserRoleEnum.Admin)
-            {
-                return true;
-            }
-        }
-        else if (requirement.PolicyName == SystemConstant.STUDENT_POLICY)
-        {
-            if (sessionUser.Role == (int)UserRoleEnum.Student)
-            {
-                return true;
-            }
-        }
-        else if(requirement.PolicyName == SystemConstant.EMPLOYEE_POLICY)
-        {
-            if (sessionUser.Role == (int)UserRoleEnum.Employee)
-            {
-                return true;
-            }
-        } else if(requirement.PolicyName == SystemConstant.EMPLOYER_POLICY)
-        {
-            if (sessionUser.Role == (int)UserRoleEnum.Employer)
-            {
-                return true;
-            }
-        }
-
-        throw new ForbiddenException("Unauthorized to this resource");
-    }
+   
 }

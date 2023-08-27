@@ -1,14 +1,14 @@
 ﻿using Surface.BusinessAccessLayer.Services.Infrastructure;
 using Surface.Entities.DataModels;
-
+using Surface_Entities.DTOs;
 
 namespace Surface_BusinessLayer.Services.Infrastructure
 {
     public interface IUserService : IBaseService<User>
     {
-        User GetById(long id);
-        User GetByEmail(string email);
-        User GetByUserName(string userName);
+        Task AddAsync(RegisterDTO dTO);
+
+        Task<LoginResponseDTO> Login(LoginDTO dto);
 
     }
 }

@@ -12,6 +12,8 @@ using Surface.BusinessAccessLayer.Services.Infrastructure;
 using Surface.Common.Constants;
 using Surface.DataAccessLayer.Repositories.Architecture;
 using Surface.DataAccessLayer.Repositories.Infrastructure;
+using Surface_BusinessLayer.Services.Architecture;
+using Surface_BusinessLayer.Services.Infrastructure;
 using Surface_Entities.Context;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -57,6 +59,7 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddScoped(typeof(IBaseRepo<>), typeof(BaseRepo<>));
 builder.Services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
+builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddSingleton<ITokenBlacklistService, TokenBlacklistService>();
 
 

@@ -10,9 +10,7 @@ public class User : TimeStampedEntity<long>
     public byte StatusId { get; set; }
     public byte AccessFailedCount { get; set; }
     public DateTime? LockedOutEndDate { get; set; }
-    public bool MustChangePassword { get; set; }
     public string? Avatar { get; set; } 
-    
    
     [ForeignKey(nameof(LoginProviderId))]
     public virtual LoginProvider LoginProvider { get; } = null!;
