@@ -1,23 +1,35 @@
 ﻿using Google.Apis.Auth;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Surface.BusinessAccessLayer.Services.Architecture;
+using Surface.BusinessAccessLayer.Services.Infrastructure;
+using Surface.Common.Constants;
 using Surface.Common.Utils;
 using Surface.Common.Utils.Models;
+using Surface.DataAccessLayer.Repositories.Architecture;
 using Surface.DataAccessLayer.Repositories.Infrastructure;
 using Surface.Entities.DataModels;
 using Surface_BusinessLayer.Services.Infrastructure;
 using Surface_Entities.DTOs;
+using System.Security.Authentication;
+using System.Security.Claims;
 
 namespace Surface_BusinessLayer.Services.Architecture
 {
-    public class UserService : BaseService<User>, IUserService
+    public class AccountService : BaseService<User>, IAccountService
     {
         private readonly IUnitOfWork _uow;
         private readonly IConfiguration _configuration;
-        public UserService(IUnitOfWork uow, IConfiguration configuration) : base(uow.UserRepo, uow)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IEmailService _emailService;
+
+        public AccountService(IUnitOfWork uow, IConfiguration configuration, IHttpContextAccessor httpContextAccessor, IEmailService emailService
+            ) : base(uow.UserRepo, uow)
         {
             _uow = uow;
             _configuration = configuration;
+            _httpContextAccessor = httpContextAccessor;
+            _emailService = emailService;
         }
 
         public async Task AddAsync(RegisterDTO dTO)
@@ -66,6 +78,7 @@ namespace Surface_BusinessLayer.Services.Architecture
                 StatusId = 1,
                 AccessFailedCount = 0,
                 LockedOutEndDate = null,
+                Token = null,
                 Avatar = null
             };
             await AddAsync(user);
@@ -110,7 +123,11 @@ namespace Surface_BusinessLayer.Services.Architecture
 
         public async Task<LoginResponseDTO> Login(LoginDTO dto)
         {
-            User user = await GetAsync(x => x.Email == dto.Email) ?? throw new Exception("User not found"); //add status validation
+            User user = await GetByEmailAsync(dto.Email); //add status validation
+            if (user == null)
+            {
+                throw new Exception("User not found");
+            }
 
             if (user.AccessFailedCount >= 3)
             {
@@ -150,7 +167,7 @@ namespace Surface_BusinessLayer.Services.Architecture
             {
                 //reset access failed count
                 user.AccessFailedCount = (byte)(user.AccessFailedCount + 1);
-                if(user.LockedOutEndDate == null)
+                if (user.LockedOutEndDate == null)
                 {
                     user.LockedOutEndDate = DateTime.Now.AddMinutes(5);
                 }
@@ -158,6 +175,116 @@ namespace Surface_BusinessLayer.Services.Architecture
                 throw new Exception("Invalid credintials");
             }
 
+        }
+
+        public async Task ForgotPassword(ForgotPasswordDTO dto)
+        {
+            User? user = await GetByEmailAsync(dto.Email);
+            if (user == null)
+            {
+                return;
+            }
+
+            ResetPasswordJwtSetting setting = GetResetPasswordJwtSetting();
+            ResetPasswordModel model = SetResetPasswordModel(user.Id, setting.ExpiryMinutes);
+
+            string token = JwtHelper.GenerateToken(setting, model);
+
+            user.Token = token;
+            user.ModifiedOn = DateTime.UtcNow;
+
+            string url = GetResetPasswordUrl(token);
+
+            EmailMessage emailMessage = new EmailMessage(new string[] { user.Email }, SystemConstant.EMAIL_HEADING_RESET_PASSWORD, url);
+            await _emailService.SendEmailAsync(emailMessage);
+
+            await UpdateAsync(user);
+
+        }
+        private async Task<User?> GetByEmailAsync(string email)
+        {
+            User? user = await GetAsync(u => u.Email == email, null);
+            return user;
+        }
+        private ResetPasswordJwtSetting GetResetPasswordJwtSetting()
+        {
+            ResetPasswordJwtSetting resetPasswordJwtSetting = new();
+            _configuration.GetSection(SystemConstant.RESET_PASSWORD_JWT_SETTING).Bind(resetPasswordJwtSetting);
+            return resetPasswordJwtSetting;
+        }
+
+        private ResetPasswordModel SetResetPasswordModel(long id, int expiryMinutes)
+        {
+            DateTime validTill = DateTime.UtcNow.AddMinutes(expiryMinutes);
+
+            ResetPasswordModel model = new()
+            {
+                Id = id,
+                VaildTill = validTill,
+            };
+            return model;
+        }
+
+        private string GetResetPasswordUrl(string token)
+        {
+            var request = _httpContextAccessor.HttpContext.Request;
+            var baseUrl = $"{request.Scheme}://{request.Host.Value}";
+            string url = $"{baseUrl}{SystemConstant.ENDPOINT_RESET_PASSWORD}?token={token}";
+            return url;
+        }
+
+        public async Task ResetPasswordAsync(string token, ResetPasswordDTO dto)
+        {
+            ResetPasswordJwtSetting setting = GetResetPasswordJwtSetting();
+
+            ResetPasswordModel model = GetResetPasswordModel(setting, token);
+
+            User user = await _uow.UserRepo.GetByIdAsync(model.Id);
+
+            //check if there is token with associated user in db
+            if (user.Token != token) throw new AuthenticationException(ExceptionMessage.UNAUTHORIZED);
+
+            user.ModifiedOn = DateTime.UtcNow;
+            user.Token = null;
+
+            if (JwtHelper.IsTokenExpired(token))
+            {
+                await UpdateAsync(user);
+                throw new AuthenticationException(ExceptionMessage.RESET_PASSWORD_TOKEN_EXPIRED);
+            }
+
+            byte[] salt;
+            user.Password = PasswordHelper.HashPassword(dto.Password, out salt);
+            user.Salt = Convert.ToHexString(salt);
+           await UpdateAsync(user);
+        }
+        private ResetPasswordModel GetResetPasswordModel(ResetPasswordJwtSetting setting, string token)
+        {
+            ClaimsPrincipal? claimsPrincipal = JwtHelper.ValidateJwtToken(setting, token);
+
+            if (claimsPrincipal == null)
+            {
+                throw new UnauthorizedAccessException();
+            }
+
+            Claim? idClaim = claimsPrincipal.FindFirst(ClaimTypes.NameIdentifier);
+            Claim? validTillClaim = claimsPrincipal.FindFirst("ValidTill");
+
+            if (idClaim == null || validTillClaim == null)
+            {
+                throw new InvalidOperationException(ExceptionMessage.INVALID_CLAIMS);
+            }
+
+            long id = long.Parse(idClaim.Value);
+            DateTime validTill = DateTime.Parse(validTillClaim.Value);
+
+            ResetPasswordModel model = new ResetPasswordModel
+            {
+                Id = id,
+                VaildTill = validTill
+            };
+
+            return model;
         }
     }
 }

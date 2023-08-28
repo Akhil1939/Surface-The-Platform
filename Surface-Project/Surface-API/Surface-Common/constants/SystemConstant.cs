@@ -15,6 +15,9 @@
         public const int KEY_SIZE = 64;
 
         public const string JWT_SETTING = "JwtSetting";
+        public const string EMAIL_SETTING = "EmailSetting";
+        public const string RESET_PASSWORD_JWT_SETTING = "ResetPasswordJwtSetting";
+
         public const string AUTH_TOKEN = "AuthToken";
         public const byte DEFAULT_LOGINPROVIDER_ID = 1;
         public const byte DEFAULT_LANGUAGE_ID = 1;
@@ -38,5 +41,12 @@
 
         public const string ASSETS_PATH = "/assets";
         public const string AVATAR_PATH = "/user/avatar";
+        public const string EMAIL_TEMPLATES_PATH = "/wwwroot/EmailTemplates/";
+        public const int RESET_PASSWORD_TOKEN_EXPIRY_MINUTES = 5;
+        public const string EMAIL_HEADING_RESET_PASSWORD = "Reset Password";
+        public const string ENDPOINT_RESET_PASSWORD = "/Accounts/ResetPassword";
+
+
+
     }
 }

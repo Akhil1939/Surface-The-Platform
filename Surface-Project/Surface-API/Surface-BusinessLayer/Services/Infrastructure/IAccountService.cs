@@ -4,11 +4,13 @@ using Surface_Entities.DTOs;
 
 namespace Surface_BusinessLayer.Services.Infrastructure
 {
-    public interface IUserService : IBaseService<User>
+    public interface IAccountService : IBaseService<User>
     {
         Task AddAsync(RegisterDTO dTO);
 
         Task<LoginResponseDTO> Login(LoginDTO dto);
+        Task ForgotPassword(ForgotPasswordDTO dto);
+        Task ResetPasswordAsync(string token, ResetPasswordDTO dto);
 
     }
 }

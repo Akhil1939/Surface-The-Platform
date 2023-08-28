@@ -35,6 +35,30 @@ namespace Surface.Common.Utils
             return new JwtSecurityTokenHandler().WriteToken(authToken);
         }
 
+        public static string GenerateToken(ResetPasswordJwtSetting setting, ResetPasswordModel model)
+        {
+            if (setting == null)
+                return string.Empty;
+
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(setting.Key));
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+
+            var claims = new[]
+            {
+                new Claim(ClaimTypes.NameIdentifier, model.Id.ToString()),
+                new Claim("ValidTill", model.VaildTill.ToString("o")),
+        };
+
+            var authToken = new JwtSecurityToken(
+                setting.Issuer,
+                setting.Audience,
+                claims,
+                expires: DateTime.UtcNow.AddMinutes(setting.ExpiryMinutes),
+                signingCredentials: credentials);
+
+            return new JwtSecurityTokenHandler().WriteToken(authToken);
+        }
+
         public static ClaimsPrincipal? ValidateJwtToken(JwtSetting jwtSetting, string authToken)
         {
             if (IsTokenExpired(authToken))
