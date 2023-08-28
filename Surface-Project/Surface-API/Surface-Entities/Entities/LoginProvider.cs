@@ -1,15 +1,10 @@
-﻿using Surface_Entities.BaseModels;
-using System;
-using System.Collections.Generic;
+using surface.Entities.DataModels;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Surface_Entities.Entities
+namespace Surface.Entities.DataModels;
+public class LoginProvider : TimeStampedEntity<byte>
 {
-    [Table("login_provider")]
-    public class LoginProvider:BaseModel
-    {
-    }
+    public string Name { get; set; } = null!;
+    public byte StatusId { get; set; }
+    [ForeignKey(nameof(StatusId))]
+    public virtual Status Status { get; set; } = null!;
 }

@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using surface.Entities.DataModels;
 
-namespace Surface_Entities.Entities
+namespace Surface.Entities.DataModels;
+public class StatusGroup : TimeStampedEntity<byte>
 {
-    [Table("status_group")]
-    public class StatusGroup:DropDownModel
-    { }
+    public string Name { get; set; } = null!;
 }

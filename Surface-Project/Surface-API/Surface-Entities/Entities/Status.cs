@@ -1,20 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+using surface.Entities.DataModels;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Surface_Entities.Entities
+namespace Surface.Entities.DataModels;
+public class Status : TimeStampedEntity<byte>
 {
-    [Table("status")]
-    public class Status:DropDownModel
-    {
-        [Column("group_id")]
-        public int GroupId { get; set; }
-
-        [ForeignKey("GroupId")]
-        public virtual StatusGroup Group { get; set; } = null!;
-    }
+    public string Name { get; set; } = null!;
+    public byte StatusGroupId { get; set; }
+    [ForeignKey(nameof(StatusGroupId))]
+    public virtual StatusGroup StatusGroup { get; set; } = null!;
 }

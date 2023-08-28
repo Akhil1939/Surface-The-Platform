@@ -1,0 +1,10 @@
+{
+    "login":"connexion",
+    "email":"email",
+    "email_placeholder":"votre email",
+    "password":"mot de passe",
+    "password_placeholder":"votre mot de passe",
+    "forgot_password":"mot de passe oublié",
+    "logout":"déconnexion",
+    "register":"inscription"
+}

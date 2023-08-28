@@ -1,41 +1,22 @@
-﻿using System.ComponentModel.DataAnnotations;
+using surface.Entities.DataModels;
 using System.ComponentModel.DataAnnotations.Schema;
-using Surface_Entities.BaseModels;
-
-namespace Surface_Entities.Entities
+namespace Surface.Entities.DataModels;
+public class User : TimeStampedEntity<long>
 {
-    [Table("user")]
-    public class User:BaseModel
-    {
-        [Column("first_name")]
-        [StringLength(100)]
-        public string FirstName { get; set; } = null!;
-        [Column("last_name")]
-        [StringLength(100)]
-        public string? LastName { get; set; }
-        [Column("email")]
-        [StringLength(255)]
-        public string Email { get; set; } = null!;
-        [Column("role_id")]
-        public int RoleId { get; set; }
-        [Column("password")]
-        [StringLength(1000)]
-        public string Password { get; set; } = null!;
-        [Column("login_provider_id")]
-        public int LoginProviderId { get; set; }
-        [Column("login_attempt")]
-        public byte LoginAttempt { get; set; }
-        [Column("status_id")]
-        public int StatusId { get; set; }
-        [Column("is_online")]
-        public bool IsOnline { get; set; }
+    public string Email { get; set; } = null!;
+    public string? Password { get; set; }
+    public string? Salt { get; set; }
+    public byte LoginProviderId { get; set; }
+    public byte StatusId { get; set; }
+    public byte AccessFailedCount { get; set; }
 
-        [ForeignKey("StatusId")]
-        public virtual Status Status { get; set; } = null!;
-        [ForeignKey("RoleId")]
-        public virtual Role Role { get; set; } = null!;
-        [ForeignKey("LoginProviderId")]
-        public virtual LoginProvider LoginProvider { get; set; } = null!;
+    public DateTime? LockedOutEndDate { get; set; }
+    public string? Avatar { get; set; }
 
-    }
+    public string? Token { get; set; }
+    [ForeignKey(nameof(LoginProviderId))]
+    public virtual LoginProvider LoginProvider { get; } = null!;
+    [ForeignKey(nameof(StatusId))]
+    public virtual Status Status { get; } = null!;
+
 }
