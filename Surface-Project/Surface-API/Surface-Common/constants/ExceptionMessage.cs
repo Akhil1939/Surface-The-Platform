@@ -16,6 +16,10 @@ namespace Surface.Common.Constants
 
         public const string FILE_IS_NULL = "File is null or empty!";
         public const string DATA_ALREADY_PRESENT = "Entity already available";
+        public const string RESET_PASSWORD_TOKEN_EXPIRED = "Change password link is expired";
+        public const string INVALID_CLAIMS = "Invalid claims";
+
+
 
     }
 }

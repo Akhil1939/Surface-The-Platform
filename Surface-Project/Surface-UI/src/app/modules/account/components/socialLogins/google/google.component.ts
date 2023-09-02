@@ -7,6 +7,7 @@ import {
 } from '@abacritt/angularx-social-login';
 import { environment } from 'src/environments/environment.development';
 import { Router } from '@angular/router';
+import { AccountService } from '../../../services/account.service';
 
 declare let google: any;
 declare let gapi: any;
@@ -23,8 +24,12 @@ export class GoogleComponent {
     private googleAuthService: SocialAuthService,
     private router: Router,
     private elementRef: ElementRef,
-    private scriptService: ScriptService
+    private scriptService: ScriptService,
+    private accountService:AccountService
   ) {}
+  GoogleToken={
+    token:'',
+  }
   ngOnInit() {
     const scriptElement = this.scriptService.loadJsScript(
       this.renderer,
@@ -69,14 +74,12 @@ export class GoogleComponent {
     google.accounts.id.prompt(); // also display the One Tap dialog
   }
   private handleCredentialResponse(response: any): void {
-    console.log('Encoded JWT ID token: ' + response.credential);
+    this.GoogleToken.token = response.credential
+    console.log(this.GoogleToken, "token")
+this.accountService.continueWithGoogle(this.GoogleToken).subscribe(res=>{
+  console.log("Continew with google response", res);
+})
   }
 
-  loginWithGoogle(): void {
-    this.googleAuthService
-      .signIn(GoogleLoginProvider.PROVIDER_ID)
-      .then((user: any) => {
-        console.log(user);
-      });
-  }
+ 
 }
