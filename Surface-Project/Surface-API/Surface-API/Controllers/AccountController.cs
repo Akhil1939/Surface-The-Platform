@@ -34,7 +34,11 @@ namespace Surface_API.Controllers
            LoginResponseDTO response =  await _service.Login(dto);
             return new SuccessResponseHelper<object>().GetSuccessResponse(200, "User Login successfully", response);
         }
-
+        [HttpPost("ContinueWithGoogle")]
+        public async Task<IActionResult> ContinueWithGoogle([FromBody] SocialLoginDTO dto)
+        {
+            return new SuccessResponseHelper<LoginResponseDTO>().GetSuccessResponse(200, "Success", await _service.GoogleUser(dto));
+        } 
         [HttpPost("ForgotPassword")]
         public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordDTO dto)
         {

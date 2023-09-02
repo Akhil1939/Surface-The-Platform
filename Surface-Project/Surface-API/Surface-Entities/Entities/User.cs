@@ -4,6 +4,8 @@ namespace Surface.Entities.DataModels;
 public class User : TimeStampedEntity<long>
 {
     public string Email { get; set; } = null!;
+    public string FirstName { get; set; } = null!;
+    public string? LastName { get; set; }
     public string? Password { get; set; }
     public string? Salt { get; set; }
     public byte LoginProviderId { get; set; }

@@ -81,6 +81,7 @@ namespace Surface.Common.Utils
             ClaimsPrincipal? principal = tokenHandler.ValidateToken(authToken, validationParameters, out var validatedToken);
             return principal;
         }
+
         public static DateTime GetTokenExpirationTime(string token)
         {
             JwtSecurityTokenHandler tokenHandler = new();

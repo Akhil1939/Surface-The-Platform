@@ -4,7 +4,7 @@
     {
         public bool Success { get; }
         public int HttpStatusCode { get; }
-        public List<string> Messages { get; }
+        public string Message { get; }
         public T? Data { get; }
         public Dictionary<string, object>? Metadata { get; }
 
@@ -12,7 +12,7 @@
         {
             Success = success;
             HttpStatusCode = httpStatusCode;
-            Messages = messages;
+            Message = messages.First();
             Data = data;
             Metadata = metadata;
         }

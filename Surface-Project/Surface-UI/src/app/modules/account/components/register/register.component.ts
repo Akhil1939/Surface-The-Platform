@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {  AccountService } from '../../services/account.service';
+import { ICustomRegistration } from '../../interfaces/registration';
 
 @Component({
   selector: 'app-register',
@@ -8,11 +10,20 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterComponent {
   registrationForm:FormGroup=new FormGroup({});
-  constructor() { }
+  user:ICustomRegistration={
+    firstName:'',
+    email:'',
+    password:'',
+    lastName:'',
+    loginProviderId:0,
+    loginToken:'',
+
+  }
+  constructor(private accountService:AccountService) { }
   ngOnInit(){
     this.registrationForm=new FormGroup({
       firstName:new FormControl('',[Validators.required]),
-      lastName:new FormControl('',[Validators.required]),
+      lastName:new FormControl(''),
       email:new FormControl('',[Validators.required,Validators.email]),
       password:new FormControl('',[Validators.required]),
       confirmPassword:new FormControl('',[Validators.required])
@@ -21,7 +32,17 @@ export class RegisterComponent {
    
   register(){
     if(this.registrationForm.valid){
-      console.log(this.registrationForm.value);
+    this.user.email = this.registrationForm.get('email')?.value;
+    this.user.password = this.registrationForm.get('password')?.value;
+    this.user.firstName = this.registrationForm.get('firstName')?.value;
+    this.user.lastName = this.registrationForm.get('lastName')?.value;
+    this.user.loginProviderId = 1;
+    this.user.loginToken = '';
+
+      console.log(this.user)
+       this.accountService.customRegister(this.user).subscribe (data=>{
+         console.log(data);
+       })
     }else{
       console.log("invalid")
     }

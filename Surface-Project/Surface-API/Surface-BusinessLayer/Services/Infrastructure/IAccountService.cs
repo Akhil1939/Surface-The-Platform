@@ -11,6 +11,7 @@ namespace Surface_BusinessLayer.Services.Infrastructure
         Task<LoginResponseDTO> Login(LoginDTO dto);
         Task ForgotPassword(ForgotPasswordDTO dto);
         Task ResetPasswordAsync(string token, ResetPasswordDTO dto);
+        Task<LoginResponseDTO> GoogleUser(SocialLoginDTO dto);
 
     }
 }
