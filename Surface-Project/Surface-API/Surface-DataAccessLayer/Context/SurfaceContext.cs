@@ -2,6 +2,7 @@
 using surface.Entities.DataModels;
 using Surface.Entities.Configurations;
 using Surface.Entities.DataModels;
+using Surface_Entities.Entities;
 using Surface_Entities.EntityConfigurations;
 
 namespace Surface_Entities.Context
@@ -108,13 +109,20 @@ namespace Surface_Entities.Context
         public DbSet<StatusGroup> StatusGroups { get; set; }
         public DbSet<Status> Statuses { get; set; }
         public DbSet<LoginProvider> LoginProviders { get; set; }
-        public DbSet<User> User { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<UserRole> UserRoles { get; set; }
+        public DbSet<Project> Projects {  get; set; }
+        public DbSet<CustomerStory> CustomerStories { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new StatusGroupConfiguration());
             modelBuilder.ApplyConfiguration(new StatusConfiguration());
             modelBuilder.ApplyConfiguration(new LoginProviderConfiguration());
             modelBuilder.ApplyConfiguration(new UserConfiguration());
+            modelBuilder.ApplyConfiguration(new UserRoleConfiguration());
+            modelBuilder.ApplyConfiguration(new ProjectConfiguration());
+            modelBuilder.ApplyConfiguration(new CustomerStoryConfiguration());
         }
     }
 }

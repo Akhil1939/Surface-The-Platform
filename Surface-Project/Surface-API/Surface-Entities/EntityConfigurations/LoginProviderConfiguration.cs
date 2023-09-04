@@ -6,10 +6,10 @@ using Surface.Entities.DataModels;
 
 namespace Surface_Entities.EntityConfigurations
 {
-    public class LoginProviderConfiguration : IEntityTypeConfiguration<LoginProvider>
-    {
-        public void Configure(EntityTypeBuilder<LoginProvider> entity)
+        public class LoginProviderConfiguration : IEntityTypeConfiguration<LoginProvider>
         {
+            public void Configure(EntityTypeBuilder<LoginProvider> entity)
+            {
             entity.Property(e => e.Id).ValueGeneratedOnAdd();
             entity.HasIndex(e => e.Name).IsUnique();
             entity.Property(e => e.StatusId).HasDefaultValue(StatusEnum.UserStatus.Active);
