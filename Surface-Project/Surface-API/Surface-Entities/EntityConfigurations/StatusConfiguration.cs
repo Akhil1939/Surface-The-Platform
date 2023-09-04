@@ -242,6 +242,38 @@ namespace Surface_Entities.EntityConfigurations
             ModifiedOn = DateTime.Now,
         },
         // ... Other Bug Statuses
+        new Status
+        {
+            Id = 27,
+            Name = "Pending",
+            StatusGroupId = 6,
+            CreatedOn = DateTime.Now,
+            ModifiedOn = DateTime.Now,
+        },
+        new Status
+        {
+            Id = 28,
+            Name = "Reviewed",
+            StatusGroupId = 6,
+            CreatedOn = DateTime.Now,
+            ModifiedOn = DateTime.Now,
+        },
+        new Status
+        {
+            Id = 29,
+            Name = "In Progress",
+            StatusGroupId = 6,
+            CreatedOn = DateTime.Now,
+            ModifiedOn = DateTime.Now,
+        },
+        new Status
+        {
+            Id = 30,
+            Name = "Closed",
+            StatusGroupId = 6,
+            CreatedOn = DateTime.Now,
+            ModifiedOn = DateTime.Now,
+        }
     }
 );
         }

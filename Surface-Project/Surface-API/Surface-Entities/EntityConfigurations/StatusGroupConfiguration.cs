@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Surface.Entities.DataModels;
+using Surface_Entities.Entities;
 
 namespace Surface_Entities.EntityConfigurations
 {
@@ -46,6 +47,13 @@ namespace Surface_Entities.EntityConfigurations
         CreatedOn = DateTime.Now,
         ModifiedOn = DateTime.Now,
     },
+    new StatusGroup
+    {
+        Id = 6,
+        Name= "Customer Story",
+        CreatedOn = DateTime.Now,
+        ModifiedOn = DateTime.Now,
+    }
      
     }
     );

@@ -12,7 +12,7 @@ import { ICustomRegistration } from '../interfaces/registration';
 })
 export class AccountService {
   constructor(private httpClient: HttpClient) {
-    console.log('Hello AcccountService Provider');
+    console.log('Hello Account Service Provider');
   }
 
   //register method to call api
