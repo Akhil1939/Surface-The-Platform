@@ -113,6 +113,8 @@ namespace Surface_Entities.Context
         public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<Project> Projects {  get; set; }
         public DbSet<CustomerStory> CustomerStories { get; set; }
+        public DbSet<Team> Teams { get; set; }
+        public DbSet<TeamMember> TeamMembers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -123,6 +125,8 @@ namespace Surface_Entities.Context
             modelBuilder.ApplyConfiguration(new UserRoleConfiguration());
             modelBuilder.ApplyConfiguration(new ProjectConfiguration());
             modelBuilder.ApplyConfiguration(new CustomerStoryConfiguration());
+            modelBuilder.ApplyConfiguration(new TeamConfiguration());
+            modelBuilder.ApplyConfiguration(new TeamMemberConfiguration());
         }
     }
 }

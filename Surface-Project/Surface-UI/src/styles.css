@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html, body { height: 100%; position: relative }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 :root{
@@ -8,3 +8,54 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     --btn-red:#fe4741;
     --btn-green:#277863;
 }
+
+/* snackbar  */
+.bg-success.mdc-snackbar.mat-mdc-snack-bar-container {
+    --mdc-snackbar-container-color: #33d633;
+    --mdc-snackbar-supporting-text-color: #e6fae6;
+  }
+  
+  .bg-error.mdc-snackbar.mat-mdc-snack-bar-container {
+    --mdc-snackbar-supporting-text-color: #fae6e6;
+    --mdc-snackbar-container-color: #d11a1a;
+  }
+  
+  .bg-info.mdc-snackbar.mat-mdc-snack-bar-container {
+    --mdc-snackbar-container-color: #4bb1cf;
+    --mdc-snackbar-supporting-text-color: #e6fae6;
+  }
+  
+  .bg-warning.mdc-snackbar.mat-mdc-snack-bar-container {
+    --mdc-snackbar-container-color: #ff7200;
+    --mdc-snackbar-supporting-text-color: #e6fae6;
+  }
+  
+  .mat-mdc-snack-bar-container app-snackbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .mat-mdc-form-field-bottom-align{
+    height:0 ;
+  }
+
+  :root {
+    --background: #1f2833;
+    --navbar-width: 256px;
+    --navbar-width-min: 80px;
+    --navbar-dark-primary: #0b0c10;
+    --navbar-dark-secondary: #2c3e50;
+    --navbar-light-primary: #f5f6fa;
+    --navbar-light-secondary: #8392a5;
+  }
+  
+  html, body {
+    margin: 0;
+    background: var(--background);
+  }
+  
+  #nav-toggle:checked ~ #layout123 {
+
+    background-color: #ffffff;
+  }
+

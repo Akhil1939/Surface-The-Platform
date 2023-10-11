@@ -16,6 +16,12 @@ namespace Surface_Entities.EntityConfigurations
                                 .HasForeignKey(e => e.StatusId)
                                 .IsRequired()
                                 .OnDelete(DeleteBehavior.NoAction);
+            entity.HasOne(e => e.Project)
+                .WithMany(e=>e.CustomerStories)
+                .HasForeignKey(e => e.ProjectId)
+                .IsRequired()
+                .OnDelete(DeleteBehavior.NoAction);
+
             entity.HasOne(e => e.CreatedByUser)
                 .WithMany()
                 .HasForeignKey(e => e.CreatedBy)

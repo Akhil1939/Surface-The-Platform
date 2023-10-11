@@ -11,7 +11,7 @@ namespace Surface_Entities.EntityConfigurations
         {
             entity
                                 .HasOne(e => e.StatusGroup)
-                                .WithMany()
+                                .WithMany(e=>e.Statuses)
                                 .HasForeignKey(e => e.StatusGroupId)
                                 .IsRequired()
                                 .OnDelete(DeleteBehavior.NoAction);
@@ -273,7 +273,63 @@ namespace Surface_Entities.EntityConfigurations
             StatusGroupId = 6,
             CreatedOn = DateTime.Now,
             ModifiedOn = DateTime.Now,
-        }
+        },
+    new Status
+    {
+        Id = 31,
+        Name = "Active",
+        StatusGroupId = 7,
+        CreatedOn = DateTime.Now,
+        ModifiedOn = DateTime.Now,
+    },
+         new Status
+    {
+        Id = 32,
+        Name = "On Leave",
+        StatusGroupId = 7,
+        CreatedOn = DateTime.Now,
+        ModifiedOn = DateTime.Now,
+    },
+    new Status
+    {
+        Id = 33,
+        Name = "Pending",
+        StatusGroupId = 7,
+        CreatedOn = DateTime.Now,
+        ModifiedOn = DateTime.Now,
+    },
+    new Status
+    {
+        Id = 34,
+        Name = "Completed",
+        StatusGroupId = 7,
+        CreatedOn = DateTime.Now,
+        ModifiedOn = DateTime.Now,
+    },
+    new Status
+    {
+        Id = 35,
+        Name = "Resigned/Left",
+        StatusGroupId = 7,
+        CreatedOn = DateTime.Now,
+        ModifiedOn = DateTime.Now,
+    },
+    new Status
+    {
+        Id = 36,
+        Name = "Suspended",
+        StatusGroupId = 7,
+        CreatedOn = DateTime.Now,
+        ModifiedOn = DateTime.Now,
+    },
+    new Status
+    {
+        Id = 37,
+        Name = "Not Assigned",
+        StatusGroupId = 7,
+        CreatedOn = DateTime.Now,
+        ModifiedOn = DateTime.Now,
+    },
     }
 );
         }
