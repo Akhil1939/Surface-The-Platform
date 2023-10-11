@@ -12,11 +12,13 @@ namespace Surface_Entities.Entities
         public DateTime EndDate { get; set; }
         public DateTime? ActualEndDate { get; set; }
         public string? RepoLink { get; set; }
-        public Double Budget { get; set; } = 0;
+        public double Budget { get; set; } = 0;
         public byte StatusId { get; set; }
 
         [ForeignKey(nameof(StatusId))]
         public virtual Status Statuses { get; } = null!;
 
+        public ICollection<Team>? Teams { get; set; }
+        public ICollection<CustomerStory>? CustomerStories { get; set; }
     }
 }

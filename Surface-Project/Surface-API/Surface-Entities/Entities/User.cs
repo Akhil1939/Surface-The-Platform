@@ -1,4 +1,5 @@
 using surface.Entities.DataModels;
+using Surface_Entities.Entities;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace Surface.Entities.DataModels;
 public class User : TimeStampedEntity<long>
@@ -20,5 +21,8 @@ public class User : TimeStampedEntity<long>
     public virtual LoginProvider LoginProvider { get; } = null!;
     [ForeignKey(nameof(StatusId))]
     public virtual Status Status { get; } = null!;
+
+    public virtual ICollection<TeamMember> TeamMembers { get; set; }
+
 
 }

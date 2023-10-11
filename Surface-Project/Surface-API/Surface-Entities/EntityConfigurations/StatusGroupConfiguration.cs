@@ -53,8 +53,15 @@ namespace Surface_Entities.EntityConfigurations
         Name= "Customer Story",
         CreatedOn = DateTime.Now,
         ModifiedOn = DateTime.Now,
-    }
-     
+    },
+
+     new StatusGroup
+     {
+         Id= 7,
+         Name="TeamMember",
+         CreatedOn = DateTime.Now,
+         ModifiedOn = DateTime.Now,
+     }
     }
     );
         }

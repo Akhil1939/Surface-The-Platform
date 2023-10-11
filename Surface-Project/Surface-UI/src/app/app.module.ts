@@ -10,10 +10,16 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { BaseInterceptor } from './interceptors/base.interceptor';
 import { SharedModule } from './modules/shared/shared.module';
+import { HeaderComponent } from './components/layout/header/header.component';
+import { SidebarComponent } from './components/layout/sidebar/sidebar.component';
+import { LayoutComponent } from './container/layout/layout.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    SidebarComponent,
+    LayoutComponent
   ],
   imports: [ 
     BrowserModule,
