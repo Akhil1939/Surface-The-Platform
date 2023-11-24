@@ -9,6 +9,7 @@ namespace Surface_Entities.Context
 {
     public class SurfaceContext : DbContext
     {
+
         public SurfaceContext(DbContextOptions<SurfaceContext> options) : base(options)
         {
         }
@@ -103,7 +104,7 @@ namespace Surface_Entities.Context
         private long GetUserId()
         {
             return 1;
-            //return long.Parse(_httpContextAccessor.HttpContext.User.Identity?.Name ?? "0");
+           // return long.Parse(_httpContextAccessor.HttpContext.User.Identity?.Name ?? "0");
         }
 
         public DbSet<StatusGroup> StatusGroups { get; set; }

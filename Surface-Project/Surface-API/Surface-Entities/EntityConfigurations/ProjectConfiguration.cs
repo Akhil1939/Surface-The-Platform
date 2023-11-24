@@ -26,7 +26,7 @@ namespace Surface_Entities.EntityConfigurations
                 .HasForeignKey(e => e.ModifiedBy)
                 .IsRequired()
                 .OnDelete(DeleteBehavior.NoAction);
-              
+
             entity.HasData(
                 new Project[]
                 {
@@ -60,9 +60,9 @@ namespace Surface_Entities.EntityConfigurations
         Budget = 10000,
         StatusId = 8,
         CreatedOn = DateTime.Now,
-        CreatedBy = 4,
+        CreatedBy = 1,
         ModifiedOn = DateTime.Now,
-        ModifiedBy = 4,
+        ModifiedBy = 1,
     },
     new Project
     {
@@ -77,9 +77,9 @@ namespace Surface_Entities.EntityConfigurations
         Budget = 7500,
         StatusId = 8,
         CreatedOn = DateTime.Now,
-        CreatedBy = 3,
+        CreatedBy = 1,
         ModifiedOn = DateTime.Now,
-        ModifiedBy = 3,
+        ModifiedBy = 1,
     }
                 });
         }
