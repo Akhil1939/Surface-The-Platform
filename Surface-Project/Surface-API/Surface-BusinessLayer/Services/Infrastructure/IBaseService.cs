@@ -11,6 +11,7 @@ namespace Surface.BusinessAccessLayer.Services.Infrastructure
         Task<T?> GetAsync(Expression<Func<T, bool>> predicate, Expression<Func<T, object>>[]? includes = null, string[]? thenIncludes = null, Expression<Func<T, T>>? selects = null);
         Task<PageListResponseDTO<T>> GetAllAsync(PageListRequestEntity<T> pageListRequest);
         Task<bool> IsEntityExist(Expression<Func<T, bool>> predicate);
+        Task SaveAsync();
 
     }
 }

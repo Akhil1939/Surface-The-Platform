@@ -53,4 +53,9 @@ public class BaseService<T> : IBaseService<T> where T : class
     {
         return await _baseRepo.IsEntityExist(predicate);
     }
+    
+    public async Task SaveAsync()
+    {
+        await _unitOfWork.SaveAsync();
+    }
 }
