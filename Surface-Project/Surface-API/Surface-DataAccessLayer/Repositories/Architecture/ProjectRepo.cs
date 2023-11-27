@@ -16,10 +16,17 @@ namespace Surface_DataAccessLayer.Repositories.Architecture
             _context=context;
         }
 
+        public async Task Delete(long id)
+        {
+            _context.Projects.Remove(await GetByIdAsyncTracible(id));
+            await _context.SaveChangesAsync();
+        }
 
-        public async Task<Project> GetProjectById(long Id)
+       
+        public async Task<Project> GetByIdAsyncTracible(long Id)
         {
             return await _context.Projects.Where(p => p.Id == Id).FirstOrDefaultAsync() ?? throw new Exception("Project not found");
         }
+
     }
 }
