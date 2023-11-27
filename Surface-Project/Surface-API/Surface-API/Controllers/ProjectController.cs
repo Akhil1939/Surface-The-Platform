@@ -5,7 +5,6 @@ using Surface_BusinessLayer.Services.Infrastructure;
 using Surface_Entities.DTOs.Project;
 using Surface_Entities.Entities;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Surface_API.Controllers
 {
@@ -17,19 +16,17 @@ namespace Surface_API.Controllers
         public ProjectController(IProjectService service)
         {
             _service = service;
-
         }
 
-
-        [HttpPost("upsertProject")]
-        public async Task<IActionResult> UpsertProject(UpsertProjectDTO dto)
+        [HttpPost("Add")]
+        public async Task<IActionResult> Add(UpsertProjectDTO dto)
         {
-            await _service.UpsertProject(dto);
+            await _service.Add(dto);
             return new SuccessResponseHelper<object>().GetSuccessResponse(200, "Project Created successfully", null);
         }
 
-        [HttpPatch("patchProject")]
-        public async Task<IActionResult> UpdateProject([FromQuery] long Id, [FromBody] JsonPatchDocument<Project> dto)
+        [HttpPatch("Update")]
+        public async Task<IActionResult> Update([FromQuery] long Id, [FromBody] JsonPatchDocument<Project> dto)
         {
             if (dto != null)
             {
@@ -43,13 +40,16 @@ namespace Surface_API.Controllers
                 }
                 await _service.SaveAsync();
                 return new SuccessResponseHelper<object>().GetSuccessResponse(200, "Project Created successfully", null);
-
-
             }
             return Ok();
 
         }
+        [HttpDelete ("Delete")]
+        public async Task<IActionResult> DeleteProject(long id)
+        {
+            await _service.DeleteProject(id);
+            return new SuccessResponseHelper<object>().GetSuccessResponse(200, "Project Deleted successfully", null);
 
-
+        }
     }
 }

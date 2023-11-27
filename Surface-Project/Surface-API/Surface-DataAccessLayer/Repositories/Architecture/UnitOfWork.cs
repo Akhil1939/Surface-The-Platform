@@ -10,6 +10,7 @@ namespace Surface.DataAccessLayer.Repositories.Architecture
         private readonly SurfaceContext _context;
         private IUserRepo _userRepo;
         private IProjectRepo _projectRepo;
+        private ITeamRepo _teamRepo;
 
         public UnitOfWork(SurfaceContext context)
         {
@@ -44,6 +45,13 @@ namespace Surface.DataAccessLayer.Repositories.Architecture
             get
             {
                 return _projectRepo ??= new ProjectRepo(_context);
+            }
+        }
+        public ITeamRepo TeamRepo
+        {
+            get
+            {
+                return _teamRepo ??= new TeamRepo(_context);
             }
         }
     }

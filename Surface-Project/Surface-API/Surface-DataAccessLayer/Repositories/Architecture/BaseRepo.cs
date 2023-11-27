@@ -145,8 +145,8 @@ namespace Surface.DataAccessLayer.Repositories.Architecture
         {
             return await _dbSet.FindAsync(id);
         }
-        
 
+     
 
         public async Task<bool> IsEntityExist(Expression<Func<T, bool>> predicate)
         {

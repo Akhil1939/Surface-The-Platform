@@ -26,7 +26,10 @@ namespace Surface_Entities.EntityConfigurations
                 .HasForeignKey(e => e.ModifiedBy)
                 .IsRequired()
                 .OnDelete(DeleteBehavior.NoAction);
-
+            entity.HasMany(p => p.Teams)
+               .WithOne(t => t.Projects)
+               .HasForeignKey(t => t.ProjectId)
+               .OnDelete(DeleteBehavior.Cascade);
             entity.HasData(
                 new Project[]
                 {
