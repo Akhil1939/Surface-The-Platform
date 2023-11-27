@@ -6,7 +6,9 @@ using Surface.BusinessAccessLayer.Services.Architecture;
 using Surface.DataAccessLayer.Repositories.Infrastructure;
 using Surface_BusinessLayer.Services.Infrastructure;
 using Surface_Entities.DTOs.Team;
+using Surface_Entities.DTOs.Team_Member;
 using Surface_Entities.Entities;
+using System.Collections.Generic;
 using System.Linq.Expressions;
 
 namespace Surface_BusinessLayer.Services.Architecture
@@ -74,6 +76,10 @@ namespace Surface_BusinessLayer.Services.Architecture
                 ProjectId = team.ProjectId
             };
 
+        }
+       public async Task InviteTeamMember(List<TeamInviteRequestDTO> Invites, long TeamId)
+        {
+            await _uow.TeamRepo.InviteTeamMember(Invites, TeamId);
         }
     }
 }
