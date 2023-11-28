@@ -32,6 +32,7 @@ namespace Surface.Entities.Configurations
                                 .HasForeignKey(e => e.StatusId)
                                 .IsRequired()
                                 .OnDelete(DeleteBehavior.NoAction);
+          
 
             entity
                 .HasData(new User[]

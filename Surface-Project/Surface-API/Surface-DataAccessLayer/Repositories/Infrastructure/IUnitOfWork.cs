@@ -11,5 +11,6 @@ namespace Surface.DataAccessLayer.Repositories.Infrastructure
         Task RollbackAsync();
        
         IUserRepo UserRepo { get; }
+        IProjectRepo ProjectRepo { get; }
     }
 }

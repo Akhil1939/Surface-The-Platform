@@ -58,16 +58,16 @@ namespace Surface_DataAccessLayer.Migrations
                         new
                         {
                             Id = (byte)1,
-                            CreatedOn = new DateTime(2023, 9, 16, 7, 57, 13, 260, DateTimeKind.Utc).AddTicks(2470),
-                            ModifiedOn = new DateTime(2023, 9, 16, 7, 57, 13, 260, DateTimeKind.Utc).AddTicks(2471),
+                            CreatedOn = new DateTime(2023, 11, 24, 5, 8, 12, 96, DateTimeKind.Utc).AddTicks(5143),
+                            ModifiedOn = new DateTime(2023, 11, 24, 5, 8, 12, 96, DateTimeKind.Utc).AddTicks(5143),
                             Name = "Custom",
                             StatusId = (byte)1
                         },
                         new
                         {
                             Id = (byte)2,
-                            CreatedOn = new DateTime(2023, 9, 16, 7, 57, 13, 260, DateTimeKind.Utc).AddTicks(2474),
-                            ModifiedOn = new DateTime(2023, 9, 16, 7, 57, 13, 260, DateTimeKind.Utc).AddTicks(2475),
+                            CreatedOn = new DateTime(2023, 11, 24, 5, 8, 12, 96, DateTimeKind.Utc).AddTicks(5145),
+                            ModifiedOn = new DateTime(2023, 11, 24, 5, 8, 12, 96, DateTimeKind.Utc).AddTicks(5146),
                             Name = "Google",
                             StatusId = (byte)1
                         });
@@ -101,296 +101,296 @@ namespace Surface_DataAccessLayer.Migrations
                         new
                         {
                             Id = (byte)1,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9819),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9824),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3445),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3448),
                             Name = "Active",
                             StatusGroupId = (byte)1
                         },
                         new
                         {
                             Id = (byte)2,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9827),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9828),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3450),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3451),
                             Name = "Inactive",
                             StatusGroupId = (byte)1
                         },
                         new
                         {
                             Id = (byte)3,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9830),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9831),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3453),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3453),
                             Name = "Reported",
                             StatusGroupId = (byte)1
                         },
                         new
                         {
                             Id = (byte)4,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9834),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9835),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3455),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3455),
                             Name = "Blocked",
                             StatusGroupId = (byte)1
                         },
                         new
                         {
                             Id = (byte)5,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9837),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9838),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3457),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3458),
                             Name = "Deleted",
                             StatusGroupId = (byte)1
                         },
                         new
                         {
                             Id = (byte)6,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9840),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9841),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3459),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3460),
                             Name = "Locked",
                             StatusGroupId = (byte)1
                         },
                         new
                         {
                             Id = (byte)7,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9844),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9845),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3461),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3462),
                             Name = "Planning",
                             StatusGroupId = (byte)2
                         },
                         new
                         {
                             Id = (byte)8,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9847),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9848),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3464),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3464),
                             Name = "Active",
                             StatusGroupId = (byte)2
                         },
                         new
                         {
                             Id = (byte)9,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9850),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9851),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3466),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3466),
                             Name = "On Hold",
                             StatusGroupId = (byte)2
                         },
                         new
                         {
                             Id = (byte)10,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9853),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9854),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3467),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3468),
                             Name = "Completed",
                             StatusGroupId = (byte)2
                         },
                         new
                         {
                             Id = (byte)11,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9857),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9858),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3470),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3470),
                             Name = "Cancelled",
                             StatusGroupId = (byte)2
                         },
                         new
                         {
                             Id = (byte)12,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9860),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9861),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3472),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3472),
                             Name = "To Do",
                             StatusGroupId = (byte)3
                         },
                         new
                         {
                             Id = (byte)13,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9864),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9864),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3474),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3474),
                             Name = "In Progress",
                             StatusGroupId = (byte)3
                         },
                         new
                         {
                             Id = (byte)14,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9867),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9867),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3476),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3476),
                             Name = "Blocked",
                             StatusGroupId = (byte)3
                         },
                         new
                         {
                             Id = (byte)15,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9870),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9871),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3478),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3478),
                             Name = "Completed",
                             StatusGroupId = (byte)3
                         },
                         new
                         {
                             Id = (byte)16,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9873),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9874),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3480),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3480),
                             Name = "Deferred",
                             StatusGroupId = (byte)3
                         },
                         new
                         {
                             Id = (byte)17,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9876),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9877),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3482),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3483),
                             Name = "Idea",
                             StatusGroupId = (byte)4
                         },
                         new
                         {
                             Id = (byte)18,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9879),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9880),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3484),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3485),
                             Name = "Backlog",
                             StatusGroupId = (byte)4
                         },
                         new
                         {
                             Id = (byte)19,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9883),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9883),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3486),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3486),
                             Name = "In Progress",
                             StatusGroupId = (byte)4
                         },
                         new
                         {
                             Id = (byte)20,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9886),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9887),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3488),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3489),
                             Name = "Testing",
                             StatusGroupId = (byte)4
                         },
                         new
                         {
                             Id = (byte)21,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9889),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9890),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3490),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3491),
                             Name = "Released",
                             StatusGroupId = (byte)4
                         },
                         new
                         {
                             Id = (byte)22,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9892),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9893),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3492),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3493),
                             Name = "Reported",
                             StatusGroupId = (byte)5
                         },
                         new
                         {
                             Id = (byte)23,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9961),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9962),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3494),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3495),
                             Name = "In Progress",
                             StatusGroupId = (byte)5
                         },
                         new
                         {
                             Id = (byte)24,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9964),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9965),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3496),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3497),
                             Name = "Reproduced",
                             StatusGroupId = (byte)5
                         },
                         new
                         {
                             Id = (byte)25,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9968),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9968),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3498),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3499),
                             Name = "Fixed",
                             StatusGroupId = (byte)5
                         },
                         new
                         {
                             Id = (byte)26,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9971),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9972),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3500),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3501),
                             Name = "Verified",
                             StatusGroupId = (byte)5
                         },
                         new
                         {
                             Id = (byte)27,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9974),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9975),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3502),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3503),
                             Name = "Pending",
                             StatusGroupId = (byte)6
                         },
                         new
                         {
                             Id = (byte)28,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9977),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9978),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3505),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3505),
                             Name = "Reviewed",
                             StatusGroupId = (byte)6
                         },
                         new
                         {
                             Id = (byte)29,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9980),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9981),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3506),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3507),
                             Name = "In Progress",
                             StatusGroupId = (byte)6
                         },
                         new
                         {
                             Id = (byte)30,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9984),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9984),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3508),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3509),
                             Name = "Closed",
                             StatusGroupId = (byte)6
                         },
                         new
                         {
                             Id = (byte)31,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9987),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9987),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3511),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3511),
                             Name = "Active",
                             StatusGroupId = (byte)7
                         },
                         new
                         {
                             Id = (byte)32,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9990),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9991),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3513),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3513),
                             Name = "On Leave",
                             StatusGroupId = (byte)7
                         },
                         new
                         {
                             Id = (byte)33,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9993),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9994),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3515),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3515),
                             Name = "Pending",
                             StatusGroupId = (byte)7
                         },
                         new
                         {
                             Id = (byte)34,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9996),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9997),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3517),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3517),
                             Name = "Completed",
                             StatusGroupId = (byte)7
                         },
                         new
                         {
                             Id = (byte)35,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(9999),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 260, DateTimeKind.Local),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3519),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3519),
                             Name = "Resigned/Left",
                             StatusGroupId = (byte)7
                         },
                         new
                         {
                             Id = (byte)36,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 260, DateTimeKind.Local).AddTicks(3),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 260, DateTimeKind.Local).AddTicks(4),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3521),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3521),
                             Name = "Suspended",
                             StatusGroupId = (byte)7
                         },
                         new
                         {
                             Id = (byte)37,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 260, DateTimeKind.Local).AddTicks(6),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 260, DateTimeKind.Local).AddTicks(7),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3523),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3523),
                             Name = "Not Assigned",
                             StatusGroupId = (byte)7
                         });
@@ -419,50 +419,50 @@ namespace Surface_DataAccessLayer.Migrations
                         new
                         {
                             Id = (byte)1,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(6455),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(6469),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(1524),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(1533),
                             Name = "User"
                         },
                         new
                         {
                             Id = (byte)2,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(6473),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(6474),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(1535),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(1536),
                             Name = "Project"
                         },
                         new
                         {
                             Id = (byte)3,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(6476),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(6477),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(1537),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(1538),
                             Name = "Task"
                         },
                         new
                         {
                             Id = (byte)4,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(6479),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(6480),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(1540),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(1540),
                             Name = "Feature"
                         },
                         new
                         {
                             Id = (byte)5,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(6482),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(6483),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(1542),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(1542),
                             Name = "Bug"
                         },
                         new
                         {
                             Id = (byte)6,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(6486),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(6486),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(1544),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(1544),
                             Name = "Customer Story"
                         },
                         new
                         {
                             Id = (byte)7,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(6488),
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 259, DateTimeKind.Local).AddTicks(6489),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(1545),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(1546),
                             Name = "TeamMember"
                         });
                 });
@@ -541,11 +541,11 @@ namespace Surface_DataAccessLayer.Migrations
                             Id = 1L,
                             AccessFailedCount = (byte)0,
                             Avatar = "",
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 263, DateTimeKind.Local).AddTicks(3896),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 98, DateTimeKind.Local).AddTicks(441),
                             Email = "admin@gmail.com",
                             FirstName = "admin",
                             LoginProviderId = (byte)1,
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 263, DateTimeKind.Local).AddTicks(3910),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 98, DateTimeKind.Local).AddTicks(445),
                             Password = "5652DDF6EA419A920A948A4BBA99A1B48B434D1237218FCF8D2DA2DA41E7C0F4046BC10C12ABDA86D09022B2AD1D6F566F82F3DF72CDFAEE40AB154537DFB8FD",
                             Salt = "+QA9bkBDYMlaPDTRzIYMoPeMDd9oa9k/Ay4Lg==",
                             StatusId = (byte)1
@@ -581,57 +581,57 @@ namespace Surface_DataAccessLayer.Migrations
                         new
                         {
                             Id = (byte)1,
-                            CreatedOn = new DateTime(2023, 9, 16, 7, 57, 13, 263, DateTimeKind.Utc).AddTicks(6081),
-                            ModifiedOn = new DateTime(2023, 9, 16, 7, 57, 13, 263, DateTimeKind.Utc).AddTicks(6082),
+                            CreatedOn = new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5136),
+                            ModifiedOn = new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5136),
                             Name = "ProjectManager"
                         },
                         new
                         {
                             Id = (byte)2,
-                            CreatedOn = new DateTime(2023, 9, 16, 7, 57, 13, 263, DateTimeKind.Utc).AddTicks(6085),
-                            ModifiedOn = new DateTime(2023, 9, 16, 7, 57, 13, 263, DateTimeKind.Utc).AddTicks(6086),
+                            CreatedOn = new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5138),
+                            ModifiedOn = new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5139),
                             Name = "ProjectMember"
                         },
                         new
                         {
                             Id = (byte)3,
-                            CreatedOn = new DateTime(2023, 9, 16, 7, 57, 13, 263, DateTimeKind.Utc).AddTicks(6088),
-                            ModifiedOn = new DateTime(2023, 9, 16, 7, 57, 13, 263, DateTimeKind.Utc).AddTicks(6089),
+                            CreatedOn = new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5140),
+                            ModifiedOn = new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5141),
                             Name = "ProjectViewer"
                         },
                         new
                         {
                             Id = (byte)4,
-                            CreatedOn = new DateTime(2023, 9, 16, 7, 57, 13, 263, DateTimeKind.Utc).AddTicks(6091),
-                            ModifiedOn = new DateTime(2023, 9, 16, 7, 57, 13, 263, DateTimeKind.Utc).AddTicks(6091),
+                            CreatedOn = new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5142),
+                            ModifiedOn = new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5142),
                             Name = "ProjectAdmin"
                         },
                         new
                         {
                             Id = (byte)5,
-                            CreatedOn = new DateTime(2023, 9, 16, 7, 57, 13, 263, DateTimeKind.Utc).AddTicks(6093),
-                            ModifiedOn = new DateTime(2023, 9, 16, 7, 57, 13, 263, DateTimeKind.Utc).AddTicks(6094),
+                            CreatedOn = new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5144),
+                            ModifiedOn = new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5144),
                             Name = "TeamLeader"
                         },
                         new
                         {
                             Id = (byte)6,
-                            CreatedOn = new DateTime(2023, 9, 16, 7, 57, 13, 263, DateTimeKind.Utc).AddTicks(6096),
-                            ModifiedOn = new DateTime(2023, 9, 16, 7, 57, 13, 263, DateTimeKind.Utc).AddTicks(6097),
+                            CreatedOn = new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5145),
+                            ModifiedOn = new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5146),
                             Name = "Developer"
                         },
                         new
                         {
                             Id = (byte)7,
-                            CreatedOn = new DateTime(2023, 9, 16, 7, 57, 13, 263, DateTimeKind.Utc).AddTicks(6099),
-                            ModifiedOn = new DateTime(2023, 9, 16, 7, 57, 13, 263, DateTimeKind.Utc).AddTicks(6100),
+                            CreatedOn = new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5147),
+                            ModifiedOn = new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5148),
                             Name = "QAEngineer"
                         },
                         new
                         {
                             Id = (byte)8,
-                            CreatedOn = new DateTime(2023, 9, 16, 7, 57, 13, 263, DateTimeKind.Utc).AddTicks(6102),
-                            ModifiedOn = new DateTime(2023, 9, 16, 7, 57, 13, 263, DateTimeKind.Utc).AddTicks(6102),
+                            CreatedOn = new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5149),
+                            ModifiedOn = new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5149),
                             Name = "BusinessAnalyst"
                         });
                 });
@@ -684,47 +684,6 @@ namespace Surface_DataAccessLayer.Migrations
                     b.HasIndex("StatusId");
 
                     b.ToTable("CustomerStories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1L,
-                            CreatedBy = 1L,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 268, DateTimeKind.Local).AddTicks(6739),
-                            Index = 1,
-                            ModifiedBy = 1L,
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 268, DateTimeKind.Local).AddTicks(6754),
-                            Name = "Surface Story 1",
-                            ProjectId = 1L,
-                            StatusId = (byte)26,
-                            Story = "<h1>Story:</h1>\r\n<p>As a project manager or team member, I want the ability to customize my user profile to provide more context about myself and my role within the organization. This customization will enhance collaboration within the project management system.</p>\r\n\r\n<h2>Acceptance Criteria:</h2>\r\n\r\n<ol>\r\n    <li>\r\n        <h3>Profile Photo:</h3>\r\n        <ul>\r\n            <li>I can upload a profile photo to personalize my user account.</li>\r\n            <li>The profile photo should be displayed next to my name throughout the application.</li>\r\n        </ul>\r\n    </li>\r\n    \r\n    <li>\r\n        <h3>Personal Information:</h3>\r\n        <ul>\r\n            <li>I can edit my name, job title, and contact information in my profile.</li>\r\n            <li>Changes to my personal information should be reflected in the user interface.</li>\r\n        </ul>\r\n    </li>\r\n    \r\n    <li>\r\n        <h3>Bio and Description:</h3>\r\n        <ul>\r\n            <li>I can write a brief bio or description about myself, highlighting my skills, responsibilities, or any relevant information.</li>\r\n            <li>The bio/description should be displayed on my profile page and in project team member lists.</li>\r\n        </ul>\r\n    </li>\r\n    \r\n    <li>\r\n        <h3>Time Zone Setting:</h3>\r\n        <ul>\r\n            <li>I can set my preferred time zone to ensure that all project-related dates and times are displayed correctly for my location.</li>\r\n        </ul>\r\n    </li>\r\n    \r\n    <li>\r\n        <h3>Privacy Settings:</h3>\r\n        <ul>\r\n            <li>I can choose who can view my profile information:</li>\r\n            <ul>\r\n                <li>[ ] Only me</li>\r\n                <li>[ ] My team members</li>\r\n                <li>[ ] Everyone in the organization</li>\r\n            </ul>\r\n            <li>Profile information should be visible only to those I've granted access to.</li>\r\n        </ul>\r\n    </li>\r\n    \r\n    <li>\r\n        <h3>Save Changes:</h3>\r\n        <ul>\r\n            <li>After making any updates to my profile, I can save the changes, and they should persist across sessions.</li>\r\n        </ul>\r\n    </li>\r\n</ol>\r\n\r\n<h2>Definition of Done:</h2>\r\n<ul>\r\n    <li>The user profile customization feature has been thoroughly tested and is free of bugs.</li>\r\n    <li>The changes made to the user profile are stored securely and persist in the database.</li>\r\n    <li>User data privacy and access controls are enforced according to the selected privacy settings.</li>\r\n    <li>The user interface provides clear and user-friendly options for customizing the profile.</li>\r\n    <li>Documentation and user guides have been updated to explain how to use the new profile customization feature.</li>\r\n</ul>"
-                        },
-                        new
-                        {
-                            Id = 2L,
-                            CreatedBy = 1L,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 268, DateTimeKind.Local).AddTicks(6759),
-                            Index = 2,
-                            ModifiedBy = 1L,
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 268, DateTimeKind.Local).AddTicks(6760),
-                            Name = "Surface Story 1",
-                            ProjectId = 1L,
-                            StatusId = (byte)26,
-                            Story = "<h1>Story:</h1>\r\n<p>As a project manager or team member, I want the ability to customize my user profile to provide more context about myself and my role within the organization. This customization will enhance collaboration within the project management system.</p>\r\n\r\n<h2>Acceptance Criteria:</h2>\r\n\r\n<ol>\r\n    <li>\r\n        <h3>Profile Photo:</h3>\r\n        <ul>\r\n            <li>I can upload a profile photo to personalize my user account.</li>\r\n            <li>The profile photo should be displayed next to my name throughout the application.</li>\r\n        </ul>\r\n    </li>\r\n    \r\n    <li>\r\n        <h3>Personal Information:</h3>\r\n        <ul>\r\n            <li>I can edit my name, job title, and contact information in my profile.</li>\r\n            <li>Changes to my personal information should be reflected in the user interface.</li>\r\n        </ul>\r\n    </li>\r\n    \r\n    <li>\r\n        <h3>Bio and Description:</h3>\r\n        <ul>\r\n            <li>I can write a brief bio or description about myself, highlighting my skills, responsibilities, or any relevant information.</li>\r\n            <li>The bio/description should be displayed on my profile page and in project team member lists.</li>\r\n        </ul>\r\n    </li>\r\n    \r\n    <li>\r\n        <h3>Time Zone Setting:</h3>\r\n        <ul>\r\n            <li>I can set my preferred time zone to ensure that all project-related dates and times are displayed correctly for my location.</li>\r\n        </ul>\r\n    </li>\r\n    \r\n    <li>\r\n        <h3>Privacy Settings:</h3>\r\n        <ul>\r\n            <li>I can choose who can view my profile information:</li>\r\n            <ul>\r\n                <li>[ ] Only me</li>\r\n                <li>[ ] My team members</li>\r\n                <li>[ ] Everyone in the organization</li>\r\n            </ul>\r\n            <li>Profile information should be visible only to those I've granted access to.</li>\r\n        </ul>\r\n    </li>\r\n    \r\n    <li>\r\n        <h3>Save Changes:</h3>\r\n        <ul>\r\n            <li>After making any updates to my profile, I can save the changes, and they should persist across sessions.</li>\r\n        </ul>\r\n    </li>\r\n</ol>\r\n\r\n<h2>Definition of Done:</h2>\r\n<ul>\r\n    <li>The user profile customization feature has been thoroughly tested and is free of bugs.</li>\r\n    <li>The changes made to the user profile are stored securely and persist in the database.</li>\r\n    <li>User data privacy and access controls are enforced according to the selected privacy settings.</li>\r\n    <li>The user interface provides clear and user-friendly options for customizing the profile.</li>\r\n    <li>Documentation and user guides have been updated to explain how to use the new profile customization feature.</li>\r\n</ul>"
-                        },
-                        new
-                        {
-                            Id = 3L,
-                            CreatedBy = 1L,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 268, DateTimeKind.Local).AddTicks(6764),
-                            Index = 3,
-                            ModifiedBy = 1L,
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 268, DateTimeKind.Local).AddTicks(6765),
-                            Name = "Surface Story 1",
-                            ProjectId = 1L,
-                            StatusId = (byte)26,
-                            Story = "<h1>Story:</h1>\r\n<p>As a project manager or team member, I want the ability to customize my user profile to provide more context about myself and my role within the organization. This customization will enhance collaboration within the project management system.</p>\r\n\r\n<h2>Acceptance Criteria:</h2>\r\n\r\n<ol>\r\n    <li>\r\n        <h3>Profile Photo:</h3>\r\n        <ul>\r\n            <li>I can upload a profile photo to personalize my user account.</li>\r\n            <li>The profile photo should be displayed next to my name throughout the application.</li>\r\n        </ul>\r\n    </li>\r\n    \r\n    <li>\r\n        <h3>Personal Information:</h3>\r\n        <ul>\r\n            <li>I can edit my name, job title, and contact information in my profile.</li>\r\n            <li>Changes to my personal information should be reflected in the user interface.</li>\r\n        </ul>\r\n    </li>\r\n    \r\n    <li>\r\n        <h3>Bio and Description:</h3>\r\n        <ul>\r\n            <li>I can write a brief bio or description about myself, highlighting my skills, responsibilities, or any relevant information.</li>\r\n            <li>The bio/description should be displayed on my profile page and in project team member lists.</li>\r\n        </ul>\r\n    </li>\r\n    \r\n    <li>\r\n        <h3>Time Zone Setting:</h3>\r\n        <ul>\r\n            <li>I can set my preferred time zone to ensure that all project-related dates and times are displayed correctly for my location.</li>\r\n        </ul>\r\n    </li>\r\n    \r\n    <li>\r\n        <h3>Privacy Settings:</h3>\r\n        <ul>\r\n            <li>I can choose who can view my profile information:</li>\r\n            <ul>\r\n                <li>[ ] Only me</li>\r\n                <li>[ ] My team members</li>\r\n                <li>[ ] Everyone in the organization</li>\r\n            </ul>\r\n            <li>Profile information should be visible only to those I've granted access to.</li>\r\n        </ul>\r\n    </li>\r\n    \r\n    <li>\r\n        <h3>Save Changes:</h3>\r\n        <ul>\r\n            <li>After making any updates to my profile, I can save the changes, and they should persist across sessions.</li>\r\n        </ul>\r\n    </li>\r\n</ol>\r\n\r\n<h2>Definition of Done:</h2>\r\n<ul>\r\n    <li>The user profile customization feature has been thoroughly tested and is free of bugs.</li>\r\n    <li>The changes made to the user profile are stored securely and persist in the database.</li>\r\n    <li>User data privacy and access controls are enforced according to the selected privacy settings.</li>\r\n    <li>The user interface provides clear and user-friendly options for customizing the profile.</li>\r\n    <li>Documentation and user guides have been updated to explain how to use the new profile customization feature.</li>\r\n</ul>"
-                        });
                 });
 
             modelBuilder.Entity("Surface_Entities.Entities.Project", b =>
@@ -790,48 +749,48 @@ namespace Surface_DataAccessLayer.Migrations
                         new
                         {
                             Id = 1L,
-                            ActualStartDate = new DateTime(2023, 9, 16, 13, 27, 13, 265, DateTimeKind.Local).AddTicks(3272),
+                            ActualStartDate = new DateTime(2023, 11, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4918),
                             Budget = 5000.0,
                             CreatedBy = 1L,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 265, DateTimeKind.Local).AddTicks(3286),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4928),
                             Description = "This is a demo project that all users are in this project",
-                            EndDate = new DateTime(2024, 2, 16, 13, 27, 13, 265, DateTimeKind.Local).AddTicks(3276),
+                            EndDate = new DateTime(2024, 4, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4921),
                             ModifiedBy = 1L,
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 265, DateTimeKind.Local).AddTicks(3288),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4929),
                             Name = "Surface",
-                            StartDate = new DateTime(2023, 9, 16, 13, 27, 13, 265, DateTimeKind.Local).AddTicks(3264),
+                            StartDate = new DateTime(2023, 11, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4910),
                             StatusId = (byte)8
                         },
                         new
                         {
                             Id = 2L,
-                            ActualStartDate = new DateTime(2023, 9, 16, 13, 27, 13, 265, DateTimeKind.Local).AddTicks(3293),
+                            ActualStartDate = new DateTime(2023, 11, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4932),
                             Budget = 10000.0,
-                            CreatedBy = 4L,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 265, DateTimeKind.Local).AddTicks(3298),
+                            CreatedBy = 1L,
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4934),
                             Description = "A new development project",
-                            EndDate = new DateTime(2023, 12, 16, 13, 27, 13, 265, DateTimeKind.Local).AddTicks(3294),
-                            ModifiedBy = 4L,
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 265, DateTimeKind.Local).AddTicks(3299),
+                            EndDate = new DateTime(2024, 2, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4933),
+                            ModifiedBy = 1L,
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4935),
                             Name = "Project A",
                             RepoLink = "https://github.com/projecta",
-                            StartDate = new DateTime(2023, 9, 16, 13, 27, 13, 265, DateTimeKind.Local).AddTicks(3292),
+                            StartDate = new DateTime(2023, 11, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4931),
                             StatusId = (byte)8
                         },
                         new
                         {
                             Id = 3L,
-                            ActualStartDate = new DateTime(2023, 9, 16, 13, 27, 13, 265, DateTimeKind.Local).AddTicks(3303),
+                            ActualStartDate = new DateTime(2023, 11, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4937),
                             Budget = 7500.0,
-                            CreatedBy = 3L,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 265, DateTimeKind.Local).AddTicks(3306),
+                            CreatedBy = 1L,
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4939),
                             Description = "Another project for testing",
-                            EndDate = new DateTime(2023, 11, 16, 13, 27, 13, 265, DateTimeKind.Local).AddTicks(3304),
-                            ModifiedBy = 3L,
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 265, DateTimeKind.Local).AddTicks(3307),
+                            EndDate = new DateTime(2024, 1, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4938),
+                            ModifiedBy = 1L,
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4939),
                             Name = "Project B",
                             RepoLink = "https://github.com/projectb",
-                            StartDate = new DateTime(2023, 9, 16, 13, 27, 13, 265, DateTimeKind.Local).AddTicks(3302),
+                            StartDate = new DateTime(2023, 11, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4937),
                             StatusId = (byte)8
                         });
                 });
@@ -878,29 +837,29 @@ namespace Surface_DataAccessLayer.Migrations
                         {
                             Id = 1L,
                             CreatedBy = 1L,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 270, DateTimeKind.Local).AddTicks(1362),
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 101, DateTimeKind.Local).AddTicks(8284),
                             ModifiedBy = 1L,
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 270, DateTimeKind.Local).AddTicks(1368),
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 101, DateTimeKind.Local).AddTicks(8289),
                             Name = "Design",
                             ProjectId = 1L
                         },
                         new
                         {
                             Id = 2L,
-                            CreatedBy = 2L,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 270, DateTimeKind.Local).AddTicks(1372),
-                            ModifiedBy = 2L,
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 270, DateTimeKind.Local).AddTicks(1373),
+                            CreatedBy = 1L,
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 101, DateTimeKind.Local).AddTicks(8291),
+                            ModifiedBy = 1L,
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 101, DateTimeKind.Local).AddTicks(8292),
                             Name = "Development",
                             ProjectId = 1L
                         },
                         new
                         {
                             Id = 3L,
-                            CreatedBy = 3L,
-                            CreatedOn = new DateTime(2023, 9, 16, 13, 27, 13, 270, DateTimeKind.Local).AddTicks(1376),
-                            ModifiedBy = 3L,
-                            ModifiedOn = new DateTime(2023, 9, 16, 13, 27, 13, 270, DateTimeKind.Local).AddTicks(1377),
+                            CreatedBy = 1L,
+                            CreatedOn = new DateTime(2023, 11, 24, 10, 38, 12, 101, DateTimeKind.Local).AddTicks(8293),
+                            ModifiedBy = 1L,
+                            ModifiedOn = new DateTime(2023, 11, 24, 10, 38, 12, 101, DateTimeKind.Local).AddTicks(8294),
                             Name = "Testing",
                             ProjectId = 1L
                         });

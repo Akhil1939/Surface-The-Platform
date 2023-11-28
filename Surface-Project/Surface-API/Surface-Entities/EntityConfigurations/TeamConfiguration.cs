@@ -41,9 +41,9 @@ namespace Surface_Entities.EntityConfigurations
                         Id = 2,
                         Name = "Development",
                         ProjectId = 1,
-                        CreatedBy = 2,
+                        CreatedBy = 1,
                         CreatedOn = DateTime.Now,
-                        ModifiedBy = 2,
+                        ModifiedBy = 1,
                         ModifiedOn = DateTime.Now,
                     },
                     new Team
@@ -51,9 +51,9 @@ namespace Surface_Entities.EntityConfigurations
                         Id = 3,
                         Name = "Testing",
                         ProjectId = 1,
-                        CreatedBy = 3,
+                        CreatedBy = 1,
                         CreatedOn = DateTime.Now,
-                        ModifiedBy = 3,
+                        ModifiedBy = 1,
                         ModifiedOn = DateTime.Now,
                     },
                 }

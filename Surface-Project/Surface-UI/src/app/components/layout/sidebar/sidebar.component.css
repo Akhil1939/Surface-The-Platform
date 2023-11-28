@@ -36,13 +36,11 @@
   
   #nav-toggle:checked ~ #nav-content .nav-button .fas {
     min-width: calc(100% - 16px);
-    background-color: red;
 
   }
 
   #nav-bar #nav-toggle:checked ~ #content #content-wrapper {
     width: calc(100vw - var(--navbar-width-min));
-    background-color: #D62929;
   }
   #nav-toggle:checked ~ #nav-footer #nav-footer-avatar {
     margin-left: 0;
@@ -304,11 +302,11 @@
     overflow: hidden;
     transform: translate(0);
     transition: 0.2s;
-  
+  }
     img {
       height: 100%;
     }
-  }
+  
   
   #nav-footer-titlebox {
     position: relative;
