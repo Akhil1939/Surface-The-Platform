@@ -1,8 +1,14 @@
-<div class="layout-wrapper" #body>
-<app-sidebar></app-sidebar>
-<section class="home">
-    <div class="text">Dashboard Sidebar</div>
-    <router-outlet></router-outlet>
+<div class="layout-wrapper " #body>
+  <nav class="sidebar close"  #sidebar>
+
+    <app-sidebar></app-sidebar>
+  </nav>
+    <section class="home">
+    <div class="header ">
+
+      <app-header></app-header>
+    </div>
+    <!-- <router-outlet></router-outlet> -->
   </section>
 
 </div>
