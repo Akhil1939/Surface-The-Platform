@@ -14,11 +14,13 @@ using Surface.DataAccessLayer.Repositories.Architecture;
 using Surface.DataAccessLayer.Repositories.Infrastructure;
 using Surface_BusinessLayer.Services.Architecture;
 using Surface_BusinessLayer.Services.Infrastructure;
+using Surface_BusinessLayer.Services.Profiles;
 using Surface_Entities.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 builder.Services.AddControllers().AddNewtonsoftJson();
 builder.Services.AddDbContext<SurfaceContext>(options => 
@@ -62,9 +64,10 @@ builder.Services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IProjectService, ProjectService>();
 builder.Services.AddScoped<ITeamService, TeamService>();
+builder.Services.AddScoped<ITeamMemberService, TeamMemberService>();
+builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddSingleton<ITokenBlacklistService, TokenBlacklistService>();
-
 
 builder.Services.AddCors(options =>
 {

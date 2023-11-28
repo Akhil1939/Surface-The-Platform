@@ -10,6 +10,9 @@ namespace Surface_Entities.Entities
         public long UserId { get; set; }
         public byte UserRoleId { get; set; }
         public byte StatusId { get; set; }
+        public string VerificationToken { get; set; } = null!;
+        [NotMapped]
+        public string Email { get; set; } = string.Empty;
 
         [ForeignKey(nameof(UserId))]
         public virtual User Users { get; } = null!;

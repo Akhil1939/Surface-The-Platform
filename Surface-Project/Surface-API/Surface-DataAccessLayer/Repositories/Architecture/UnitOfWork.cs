@@ -1,6 +1,6 @@
 ﻿using Surface.DataAccessLayer.Repositories.Infrastructure;
 using Surface_DataAccessLayer.Repositories.Architecture;
-using Surface_DataAccessLayer.Repositories.Infrastructure;
+    using Surface_DataAccessLayer.Repositories.Infrastructure;
 using Surface_Entities.Context;
 
 namespace Surface.DataAccessLayer.Repositories.Architecture
@@ -11,6 +11,8 @@ namespace Surface.DataAccessLayer.Repositories.Architecture
         private IUserRepo _userRepo;
         private IProjectRepo _projectRepo;
         private ITeamRepo _teamRepo;
+        private ITeamMemberRepo _teamMemberRepo;
+
 
         public UnitOfWork(SurfaceContext context)
         {
@@ -52,6 +54,13 @@ namespace Surface.DataAccessLayer.Repositories.Architecture
             get
             {
                 return _teamRepo ??= new TeamRepo(_context);
+            }
+        }
+        public ITeamMemberRepo TeamMemberRepo
+        {
+            get
+            {
+                return _teamMemberRepo ??= new TeamMemberRepo(_context);
             }
         }
     }

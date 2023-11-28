@@ -178,7 +178,7 @@ namespace Surface_BusinessLayer.Services.Architecture
             string url = GetResetPasswordUrl(token);
 
             EmailMessage emailMessage = new EmailMessage(new string[] { user.Email }, SystemConstant.EMAIL_HEADING_RESET_PASSWORD, url);
-            await _emailService.SendEmailAsync(emailMessage);
+            await _emailService.SendPasswordResetEmailAsync(emailMessage);
 
             await UpdateAsync(user);
 
