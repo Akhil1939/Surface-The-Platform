@@ -11,7 +11,7 @@ namespace Surface_Entities.EntityConfigurations
     {
         public void Configure(EntityTypeBuilder<Team> entity)
         {
-            entity.HasOne(e => e.Projects).WithMany(e=>e.Teams).HasForeignKey(e => e.ProjectId).IsRequired().OnDelete(DeleteBehavior.NoAction);
+            //entity.HasOne(e => e.Projects).WithMany(e=>e.Teams).HasForeignKey(e => e.ProjectId).IsRequired().OnDelete(DeleteBehavior.Cascade);
             entity.HasOne(e => e.CreatedByUser)
                 .WithMany()
                 .HasForeignKey(e => e.CreatedBy)
@@ -22,6 +22,11 @@ namespace Surface_Entities.EntityConfigurations
                 .HasForeignKey(e => e.ModifiedBy)
                 .IsRequired()
                 .OnDelete(DeleteBehavior.NoAction);
+
+            entity.HasMany(t => t.TeamMembers)
+               .WithOne(tm => tm.Teams)
+               .HasForeignKey(tm => tm.TeamId)
+               .OnDelete(DeleteBehavior.Cascade);
 
             entity.HasData(
                 new Team[]

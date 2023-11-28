@@ -12,5 +12,6 @@ namespace Surface.DataAccessLayer.Repositories.Infrastructure
        
         IUserRepo UserRepo { get; }
         IProjectRepo ProjectRepo { get; }
+        ITeamRepo TeamRepo { get; }
     }
 }

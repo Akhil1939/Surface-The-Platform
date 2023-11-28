@@ -6,6 +6,7 @@ namespace Surface_DataAccessLayer.Repositories.Infrastructure
 {
     public interface IProjectRepo :IBaseRepo<Project>
     {
-        Task<Project> GetProjectById(long Id);
+        Task<Project> GetByIdAsyncTracible(long id);
+        Task Delete(long id);
     }
 }

@@ -24,6 +24,8 @@ namespace Surface.DataAccessLayer.Repositories.Infrastructure
 
         Task<T> GetByIdAsync(dynamic id);
 
+
+
         Task<bool> IsEntityExist(Expression<Func<T, bool>> predicate);
 
     }

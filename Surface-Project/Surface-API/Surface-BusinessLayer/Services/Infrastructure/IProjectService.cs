@@ -8,9 +8,9 @@ namespace Surface_BusinessLayer.Services.Infrastructure
 {
     public interface IProjectService:IBaseService<Project>
     {
-        Task UpsertProject(UpsertProjectDTO dto);
-        Task UpdateProjectStatus();
-        Task DeleteProject();
+        Task Add(UpsertProjectDTO dto);
+        Task UpdateProjectStatus(); 
+        Task DeleteProject(long id);
          Task<Project> GetById(long id);
 
     }
