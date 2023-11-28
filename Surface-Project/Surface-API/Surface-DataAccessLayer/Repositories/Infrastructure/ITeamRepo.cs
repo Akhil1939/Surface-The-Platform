@@ -1,11 +1,7 @@
 ﻿using Surface.DataAccessLayer.Repositories.Infrastructure;
 using Surface_Entities.DTOs.Team_Member;
 using Surface_Entities.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Surface_DataAccessLayer.Repositories.Infrastructure
 {
@@ -14,6 +10,7 @@ namespace Surface_DataAccessLayer.Repositories.Infrastructure
         //get tracible entity
         Task<Team> GetByIdAsyncTracible(long id);
         Task Delete(long id);
-        Task InviteTeamMember(List<TeamInviteRequestDTO> Invites, long TeamId);
+        Task<IEnumerable<TeamMember>> InviteTeamMember(List<TeamInviteRequestDTO> Invites, long TeamId);
+        Task<List<InvitedMemberDTO>> GetInvitedMember(long teamId);
     }
 }

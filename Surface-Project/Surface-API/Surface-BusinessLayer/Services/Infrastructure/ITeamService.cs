@@ -13,5 +13,6 @@ namespace Surface_BusinessLayer.Services.Infrastructure
         Task Delete(long id);
         Task<TeamDTO> GetTeam(long id);
         Task InviteTeamMember(List<TeamInviteRequestDTO> Invites, long TeamId);
+        Task<List<InvitedMemberDTO>> GetInvitedMemberList(long teamId);
     }
 }

@@ -50,11 +50,17 @@ namespace Surface_API.Controllers
             return new SuccessResponseHelper<TeamDTO>().GetSuccessResponse(200, "Team Deleted", null);
 
         }
-        [HttpPost("Invite-TeamMember")]
+        [HttpPost("Invite")]
         public async Task<IActionResult> InviteTeam(List<TeamInviteRequestDTO> Invites, long TeamId){
             await _service.InviteTeamMember(Invites, TeamId);
             return new SuccessResponseHelper<TeamDTO>().GetSuccessResponse(200, "Team Invites sends", null);
         }
 
+        [HttpGet("invite")]
+        public async Task<IActionResult> InvitedMember(long teamId)
+        {
+            return new SuccessResponseHelper<List<InvitedMemberDTO>>().GetSuccessResponse(200, "Team Invites sends", await _service.GetInvitedMemberList(teamId));
+
+        }
     }
 }
