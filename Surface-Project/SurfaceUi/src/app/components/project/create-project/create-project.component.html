@@ -1,0 +1,14 @@
+<div class="create-project-form-wrapper d-flex text-center justify-content-center align-items-center pt-3 border">
+
+    <form class="create-project-form w-50 row" [formGroup]="createProjectForm" (ngSubmit)="createProject()">
+        <h5 class=" text-start">New Project</h5>
+
+        <mat-form-field class="project-title form-field w-100">
+            <mat-label>Project Title</mat-label>
+            <input matInput placeholder="Project Title" formControlName="title">
+        </mat-form-field>
+
+
+        <button mat-raised-button type="submit"  color="primary">Create Project</button>
+    </form>
+</div>
