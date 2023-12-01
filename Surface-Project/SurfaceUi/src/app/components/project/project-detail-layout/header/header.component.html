@@ -1,0 +1,50 @@
+<div class="header-wrapper px-2 row align-items-center">
+    <div class="project-title d-flex align-items-center ">
+        <mat-icon class="mx-2">widgets</mat-icon>
+        <h3 class="mb-0">project title</h3>
+        <div class="project-action-options ">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>expand_more</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                    <mat-icon>dialpad</mat-icon>
+                    <span>Redial</span>
+                </button>
+                <button mat-menu-item disabled>
+                    <mat-icon>voicemail</mat-icon>
+                    <span>Check voice mail</span>
+                </button>
+                <button mat-menu-item>
+                    <mat-icon>notifications_off</mat-icon>
+                    <span>Disable alerts</span>
+                </button>
+            </mat-menu>
+        </div>
+
+        <div class="project-status-edit">
+            <button class="d-flex align-items-center" mat-button [matMenuTriggerFor]="statusmenu" aria-label="Example icon-button with a menu">
+                <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                  </svg> <span class="ms-1">
+
+                      Set Status
+                  </span> 
+            </button>
+            <mat-menu #statusmenu="matMenu">
+                <button mat-menu-item>
+                    <mat-icon>dialpad</mat-icon>
+                    <span>Redial</span>
+                </button>
+                <button mat-menu-item disabled>
+                    <mat-icon>voicemail</mat-icon>
+                    <span>Check voice mail</span>
+                </button>
+                <button mat-menu-item>
+                    <mat-icon>notifications_off</mat-icon>
+                    <span>Disable alerts</span>
+                </button>
+            </mat-menu>
+        </div>
+    </div>
+</div>
