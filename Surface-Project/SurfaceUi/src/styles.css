@@ -42,6 +42,36 @@ body.dark {
   --toggle-color: #fff;
   --text-color: #ccc;
 }
+/* snackbar  */
+.bg-success.mdc-snackbar.mat-mdc-snack-bar-container {
+  --mdc-snackbar-container-color: #33d633;
+  --mdc-snackbar-supporting-text-color: #e6fae6;
+}
+
+.bg-error.mdc-snackbar.mat-mdc-snack-bar-container {
+  --mdc-snackbar-supporting-text-color: #fae6e6;
+  --mdc-snackbar-container-color: #d11a1a;
+}
+
+.bg-info.mdc-snackbar.mat-mdc-snack-bar-container {
+  --mdc-snackbar-container-color: #4bb1cf;
+  --mdc-snackbar-supporting-text-color: #e6fae6;
+}
+
+.bg-warning.mdc-snackbar.mat-mdc-snack-bar-container {
+  --mdc-snackbar-container-color: #ff7200;
+  --mdc-snackbar-supporting-text-color: #e6fae6;
+}
+
+.mat-mdc-snack-bar-container app-snackbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mat-mdc-form-field-bottom-align{
+  height:0 ;
+}
+
 
 /* ===== Sidebar ===== */
 .sidebar {

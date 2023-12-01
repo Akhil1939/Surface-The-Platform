@@ -22,7 +22,7 @@ namespace Surface_BusinessLayer.Services.Architecture
             _httpContextAccessor = httpContextAccessor;
 
         }
-        public async Task Add(UpsertProjectDTO dto)
+        public async Task Add(AddProjectDTO dto)
         {
             Project createProject = new()
             {
@@ -35,7 +35,25 @@ namespace Surface_BusinessLayer.Services.Architecture
                 StatusId = 1,
                 CreatedBy = 1,
                 ModifiedBy = 1,
+
+                
             };
+            if (dto.Teams.Any())
+            {
+
+                List<Team> teams = new() { };
+
+                foreach(var item in dto.Teams)
+                {
+                    Team team = new()
+                    {
+                        Name = item,
+                        ProjectId = createProject.Id,
+                    };
+                    teams.Add(team);
+                }
+                createProject.Teams = teams;
+            }
             await AddAsync(createProject);
         }
         public async Task<Project> GetById(long id)

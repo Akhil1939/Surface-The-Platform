@@ -1,0 +1,6 @@
+.btn{
+    background-color: var(--btn-green);
+}
+.btn:hover{
+    opacity: 0.8;
+}

@@ -19,7 +19,7 @@ namespace Surface_API.Controllers
         }
 
         [HttpPost("Add")]
-        public async Task<IActionResult> Add(UpsertProjectDTO dto)
+        public async Task<IActionResult> Add(AddProjectDTO dto)
         {
             await _service.Add(dto);
             return new SuccessResponseHelper<object>().GetSuccessResponse(200, "Project Created successfully", null);
