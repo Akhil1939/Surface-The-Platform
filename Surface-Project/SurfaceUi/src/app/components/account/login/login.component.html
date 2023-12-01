@@ -1,1 +1,39 @@
-<p>login works!</p>
+<div [formGroup]="loginForm">
+    <div class="email row">
+        <div class="col-12 ">
+            <mat-form-field class="email form-field w-100  ">
+                <mat-label>Email </mat-label>
+                <input matInput type="email" placeholder="Email" formControlName="email">
+            </mat-form-field>
+        </div>
+      
+    </div>
+    <div class="password">
+        <mat-form-field class="password form-field w-100  ">
+            <mat-label>Password </mat-label>
+            <input matInput type="password" placeholder="password" formControlName="password">
+        </mat-form-field>
+    </div>
+    <div class="remember-me">
+      <!-- <mat-checkbox>Remember me</mat-checkbox> -->
+    </div>
+    <div class="row px-3">
+      <div class="btn" (click)="login()">Login</div>
+    </div>
+    <div class="row px-3 mt-2">
+      <!-- <div class="google-login col text-center">
+        <app-google></app-google>
+      </div>
+      <div class="microsoft-login col text-center">
+        <app-microsoft></app-microsoft>
+      </div>
+      <div class="facebook-login col text-center">
+        <app-facebook></app-facebook>
+      </div> -->
+    </div>
+    <div class="row px-3">
+      <a [routerLink]="['/account/forgot-password']">Forgot Password ?</a>
+      <a [routerLink]="['/account/register']">register</a>
+    </div>
+  </div>
+  
