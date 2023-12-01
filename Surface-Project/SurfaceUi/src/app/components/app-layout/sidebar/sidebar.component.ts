@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,5 +9,15 @@ import { CommonModule } from '@angular/common';
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent {
+  @ViewChild('sidebar', { static: false }) sidebar: ElementRef<HTMLDivElement> | undefined;
 
+  @ViewChild('toggle') toggle!: ElementRef;
+  @ViewChild('searchBtn') searchBtn!: ElementRef;
+  @ViewChild('modeSwitch') modeSwitch!: ElementRef;
+  @ViewChild('modeText') modeText!: ElementRef;
+
+  ngAfterViewInit() {
+    // Access the native element after it's initialized
+    
+  }
 }

@@ -1,0 +1,73 @@
+<div
+    class="create-project-form-wrapper d-flex text-center justify-content-center align-items-center pt-3 border row m-0">
+
+    <div class="col-12 col-sm-8 col-md-6">
+
+        <form class="create-project-form row  " [formGroup]="createProjectForm" (ngSubmit)="createProject()">
+            <h5 class=" text-start">New Project</h5>
+            <div class="row title">
+                <mat-form-field class="project-title form-field w-100  ">
+                    <mat-label>Project Title</mat-label>
+                    <input matInput placeholder="Project Title" formControlName="name">
+                </mat-form-field>
+            </div>
+            <div class="row description">
+                <mat-form-field>
+                    <mat-label>Textarea</mat-label>
+                    <textarea placeholder="Description" matInput formControlName="description"></textarea>
+                </mat-form-field>
+            </div>
+            <div class="teams row" formArrayName="teams">
+                @for (item of Teams.controls; track item ;let idx = $index) {
+
+                <mat-form-field  class="project-title form-field col-12 col-md-6 ">
+                    <mat-label>Team name</mat-label>
+                    <div class=" d-flex align-items-center">
+                        <input class="" matInput placeholder="team name" formControlName={{idx}}>
+                        <button class=" " mat-mini-fab type="button" (click)="RemoveTeam(idx)" color="warn">
+                            <mat-icon>delete</mat-icon></button>
+                    </div>
+                </mat-form-field>
+                }
+
+                <button mat-raised-button class="mb-3 w-75 mx-auto" type="button" (click)="AddTeam()"
+                    color="primary">Add
+                    Team</button>
+
+
+            </div>
+            <div class="time-line row ">
+                <div class=" col-12 col-md-6  ">
+                    <mat-form-field class="project-title form-field w-100">
+                        <mat-label>Start Date</mat-label>
+                        <input matInput placeholder="Project Title" type="date" formControlName="startDate">
+                    </mat-form-field>
+                </div>
+
+                <div class="div col-12 col-md-6">
+                    <mat-form-field class="project-title form-field w-100">
+                        <mat-label>End Date</mat-label>
+                        <input matInput placeholder="Project Title" type="date" formControlName="endDate">
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="repolink row">
+                <mat-form-field class="project-title w-100 form-field  col-12 col-md-6">
+                    <mat-label>Repository Link</mat-label>
+                    <input matInput placeholder="Project Title" type="text" formControlName="repoLink">
+                </mat-form-field>
+            </div>
+
+            <div class="budget row">
+                <mat-form-field class="project-title w-100 form-field  col-12 col-md-6">
+                    <mat-label>budget</mat-label>
+                    <input matInput placeholder="Budget" type="number" formControlName="budget">
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <button mat-raised-button type="submit" color="primary">Create Project</button>
+            </div>
+        </form>
+    </div>
+</div>
