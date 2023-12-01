@@ -6,6 +6,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AppLayoutComponent } from './components/app-layout/app-layout.component';
 import { RegisterComponent } from './components/account/register/register.component';
 import { LayoutComponent } from './components/account/layout/layout.component';
+import { LoginComponent } from './components/account/login/login.component';
 
 export const routes: Routes = [
   {
@@ -15,11 +16,18 @@ export const routes: Routes = [
         path:'account',
         component:LayoutComponent,
         children:[{
+          path:'',
+          redirectTo:'login',
+          pathMatch:'full'
+        },{
           path:'register',
           component:RegisterComponent
+        },{
+          path:'login',
+          component:LoginComponent
         }]
       },
-      
+
       {
         path: 'dashboard',
         component: DashboardComponent,

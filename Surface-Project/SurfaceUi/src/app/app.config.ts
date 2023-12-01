@@ -9,5 +9,5 @@ import { BaseInterceptor } from './interceptors/base.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), provideClientHydration(), provideAnimations(),
-  provideHttpClient(withFetch(),withInterceptors([BaseInterceptor])) ]
+  provideHttpClient(withFetch(),withInterceptors([BaseInterceptor])), provideRouter(routes) ]
 };
