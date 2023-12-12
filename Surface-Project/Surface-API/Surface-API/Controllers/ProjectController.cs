@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Surface.API.Utils;
+using Surface.Common.Enums;
 using Surface_BusinessLayer.Services.Infrastructure;
 using Surface_Entities.DTOs.Project;
 using Surface_Entities.Entities;
@@ -42,6 +43,16 @@ namespace Surface_API.Controllers
             }
             return Ok();
 
+        }
+        [HttpPatch("UpdateStatus")]
+        public async Task<IActionResult> UpdateStatus(long projectId, byte statusId)
+        {
+            //add this condition in db migration
+            if((byte)StatusEnum.ProjectStatus.Planning <= statusId && statusId <= (byte)StatusEnum.ProjectStatus.Cancelled)
+            {
+                await _service.UpdateProjectStatus(projectId, statusId);
+            }
+            return new SuccessResponseHelper<object>().GetSuccessResponse(200,"Status Updated successfully", null);
         }
         [HttpDelete ("Delete")]
         public async Task<IActionResult> DeleteProject(long id)

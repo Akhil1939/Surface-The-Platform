@@ -13,7 +13,7 @@ namespace Surface_DataAccessLayer.Repositories.Architecture
         private readonly SurfaceContext _context;
         public ProjectRepo(SurfaceContext context) : base(context)
         {
-            _context=context;
+            _context = context;
         }
 
         public async Task Delete(long id)
@@ -22,11 +22,25 @@ namespace Surface_DataAccessLayer.Repositories.Architecture
             await _context.SaveChangesAsync();
         }
 
-       
+
         public async Task<Project> GetByIdAsyncTracible(long Id)
         {
             return await _context.Projects.Where(p => p.Id == Id).FirstOrDefaultAsync() ?? throw new Exception("Project not found");
         }
 
+        public async Task UpdateStatus(long Id, byte StatusId)
+
+        {
+
+            if (await _context.Projects.Where(p => p.Id == Id).ExecuteUpdateAsync(setter => setter.SetProperty(entity => entity.StatusId, StatusId)) > 0)
+            {
+                return;
+            }
+            else
+            {
+                throw new Exception("Error while updating project status");
+            }
+
+        }
     }
 }

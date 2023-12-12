@@ -8,5 +8,6 @@ namespace Surface_DataAccessLayer.Repositories.Infrastructure
     {
         Task<Project> GetByIdAsyncTracible(long id);
         Task Delete(long id);
+        Task UpdateStatus(long Id, byte StatusId);
     }
 }

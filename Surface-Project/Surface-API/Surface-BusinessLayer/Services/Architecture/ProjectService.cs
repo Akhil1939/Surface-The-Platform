@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Surface.BusinessAccessLayer.Services.Architecture;
 using Surface.DataAccessLayer.Repositories.Infrastructure;
@@ -65,11 +64,10 @@ namespace Surface_BusinessLayer.Services.Architecture
 
         }
 
-        public Task UpdateProjectStatus()
+        public async Task UpdateProjectStatus(long projectId, byte statusId)
         {
-            throw new NotImplementedException();
+            await UpdateProjectStatus(projectId, statusId);
         }
-
 
 
 
