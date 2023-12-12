@@ -4,10 +4,12 @@ namespace Surface.Common.Enums
 {
     public enum StatusGroup
     {
-        Student = 1,
-        Employer = 2,
-        Employee = 3,
-        Job = 4,
-        JobApplication = 5,
+        User = 1,
+        Project = 2,
+        Task = 3,
+        Feature = 4,
+        Bug = 5,
+        CustomerStory = 6,
+        TeamMember = 7,
     }
 }

@@ -17,12 +17,19 @@ public class EmailService : IEmailService
         _env = env;
     }
 
-    public async Task SendEmailAsync(EmailMessage message)
+    public async Task SendPasswordResetEmailAsync(EmailMessage message)
     {
         EmailSetting setting = GetEmailSetting();
 
-        MimeMessage mimeMessage = CreateEmailMessage(setting,message);
+        MimeMessage mimeMessage = CreatePasswordResetEmailMessage(setting,message);
 
+        await SendAsync(setting, mimeMessage);
+    }
+    public async Task SendTeamInviteEmailAsync(EmailMessage message)
+    {
+        EmailSetting setting = GetEmailSetting();
+
+        MimeMessage mimeMessage = CreateTeamInviteEmailMessage(setting, message);
         await SendAsync(setting, mimeMessage);
     }
 
@@ -33,7 +40,7 @@ public class EmailService : IEmailService
         return setting;
     }
 
-    private MimeMessage CreateEmailMessage(EmailSetting setting, EmailMessage message)
+    private MimeMessage CreatePasswordResetEmailMessage(EmailSetting setting, EmailMessage message)
     {
         var emailMessage = new MimeMessage();
         emailMessage.From.Add(new MailboxAddress("email",setting.From));
@@ -47,6 +54,42 @@ public class EmailService : IEmailService
         // Replace placeholders in the template content
         templateContent = templateContent.Replace("{{resetLink}}", message.Content);
         templateContent = templateContent.Replace("{{minutes}}", SystemConstant.RESET_PASSWORD_TOKEN_EXPIRY_MINUTES.ToString());
+
+        var bodyBuilder = new BodyBuilder { HtmlBody = templateContent };
+
+        if (message.Attachments != null && message.Attachments.Any())
+        {
+            byte[] fileBytes;
+            foreach (var attachment in message.Attachments)
+            {
+                using (var ms = new MemoryStream())
+                {
+                    attachment.CopyTo(ms);
+                    fileBytes = ms.ToArray();
+                }
+
+                bodyBuilder.Attachments.Add(attachment.FileName, fileBytes, ContentType.Parse(attachment.ContentType));
+            }
+        }
+
+        emailMessage.Body = bodyBuilder.ToMessageBody();
+        return emailMessage;
+    }
+    
+    private MimeMessage CreateTeamInviteEmailMessage(EmailSetting setting, EmailMessage message)
+    {
+        var emailMessage = new MimeMessage();
+        emailMessage.From.Add(new MailboxAddress("email",setting.From));
+        emailMessage.To.AddRange(message.To);
+        emailMessage.Subject = message.Subject;
+
+        // Read the template file
+        string templatePath = _env.ContentRootPath + SystemConstant.EMAIL_TEMPLATES_PATH + "Team_Invite.html";
+        var templateContent = File.ReadAllText(templatePath);
+
+        // Replace placeholders in the template content
+        templateContent = templateContent.Replace("{{InviteLink}}", message.Content);
+        //templateContent = templateContent.Replace("{{minutes}}", SystemConstant.RESET_PASSWORD_TOKEN_EXPIRY_MINUTES.ToString());
 
         var bodyBuilder = new BodyBuilder { HtmlBody = templateContent };
 

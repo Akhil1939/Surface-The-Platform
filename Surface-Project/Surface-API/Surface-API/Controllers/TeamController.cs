@@ -1,10 +1,8 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Surface.API.Utils;
 using Surface_BusinessLayer.Services.Infrastructure;
 using Surface_Entities.DTOs.Team;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using Surface_Entities.DTOs.Team_Member;
 
 namespace Surface_API.Controllers
 {
@@ -24,7 +22,7 @@ namespace Surface_API.Controllers
         public async Task<IActionResult> Get(long id)
         {
 
-            return new SuccessResponseHelper<TeamDTO>().GetSuccessResponse(200, "Success", await _service.GetTeam(id) );
+            return new SuccessResponseHelper<TeamDTO>().GetSuccessResponse(200, "Success", await _service.GetTeam(id));
 
         }
 
@@ -36,7 +34,7 @@ namespace Surface_API.Controllers
             return new SuccessResponseHelper<TeamDTO>().GetSuccessResponse(200, "Team Added", null);
         }
 
-         //PUT api/<TeamController>/5
+        //PUT api/<TeamController>/5
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(int id, [FromBody] TeamDTO dto)
         {
@@ -50,6 +48,18 @@ namespace Surface_API.Controllers
         {
             await _service.Delete(id);
             return new SuccessResponseHelper<TeamDTO>().GetSuccessResponse(200, "Team Deleted", null);
+
+        }
+        [HttpPost("Invite")]
+        public async Task<IActionResult> InviteTeam(List<TeamInviteRequestDTO> Invites, long TeamId){
+            await _service.InviteTeamMember(Invites, TeamId);
+            return new SuccessResponseHelper<TeamDTO>().GetSuccessResponse(200, "Team Invites sends", null);
+        }
+
+        [HttpGet("invite")]
+        public async Task<IActionResult> InvitedMember(long teamId)
+        {
+            return new SuccessResponseHelper<List<InvitedMemberDTO>>().GetSuccessResponse(200, "Team Invites sends", await _service.GetInvitedMemberList(teamId));
 
         }
     }

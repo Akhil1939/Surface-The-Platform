@@ -58,5 +58,12 @@ namespace Surface_API.Controllers
         public void Delete(int id)
         {
         }
+
+        [HttpGet("emails/{search}")]
+        public async Task<IActionResult> GetEmailListBySearch()
+        {
+
+            return new SuccessResponseHelper<object>().GetSuccessResponse(200, "Password reset successfully", null);
+        }
     }
 }

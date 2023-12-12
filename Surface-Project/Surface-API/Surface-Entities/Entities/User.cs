@@ -14,7 +14,7 @@ public class User : TimeStampedEntity<long>
     public byte AccessFailedCount { get; set; }
 
     public DateTime? LockedOutEndDate { get; set; }
-    public string? Avatar { get; set; }
+    public string? Avatar { get; set; } = string.Empty;
 
     public string? Token { get; set; }
     [ForeignKey(nameof(LoginProviderId))]

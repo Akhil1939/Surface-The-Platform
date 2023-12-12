@@ -7,7 +7,7 @@ namespace StudentJobs.Entities.DTOs
     {
         public int PageIndex { get; set; } = SystemConstant.DEFAULT_PAGE_INDEX;
         public int PageSize { get; set; } = SystemConstant.DEFAULT_PAGE_SIZE;
-        public string SortOrder { get; set; } = string.Empty;
+        public string SortOrder { get; set; } = SystemConstant.ASCENDING;
         public string SortColumn { get; set; } = SystemConstant.DEFAULT_SORTCOLUMN;
         public BaseListRequestDTO()
         {
