@@ -17,7 +17,7 @@ export const routes: Routes = [
       {
         path: '',
         redirectTo: 'login',
-        pathMatch: 'full',
+        pathMatch: 'full',  
       },
       {
         path: 'register',
@@ -52,7 +52,7 @@ export const routes: Routes = [
         ],
       },
       {
-        path:"project",
+        path:"project/:id",
         component:ProjectDetailLayoutComponent,
       }
     ],

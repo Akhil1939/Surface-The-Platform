@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Surface_DataAccessLayer.Migrations
 {
     /// <inheritdoc />
-    public partial class tabledatainit : Migration
+    public partial class dbinit : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -220,7 +220,8 @@ namespace Surface_DataAccessLayer.Migrations
                         name: "FK_Teams_Projects_ProjectId",
                         column: x => x.ProjectId,
                         principalTable: "Projects",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Teams_Users_CreatedBy",
                         column: x => x.CreatedBy,
@@ -272,13 +273,13 @@ namespace Surface_DataAccessLayer.Migrations
                 columns: new[] { "Id", "CreatedOn", "ModifiedOn", "Name" },
                 values: new object[,]
                 {
-                    { (byte)1, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(1524), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(1533), "User" },
-                    { (byte)2, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(1535), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(1536), "Project" },
-                    { (byte)3, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(1537), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(1538), "Task" },
-                    { (byte)4, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(1540), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(1540), "Feature" },
-                    { (byte)5, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(1542), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(1542), "Bug" },
-                    { (byte)6, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(1544), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(1544), "Customer Story" },
-                    { (byte)7, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(1545), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(1546), "TeamMember" }
+                    { (byte)1, new DateTime(2023, 12, 11, 9, 54, 49, 779, DateTimeKind.Local).AddTicks(7965), new DateTime(2023, 12, 11, 9, 54, 49, 779, DateTimeKind.Local).AddTicks(7974), "User" },
+                    { (byte)2, new DateTime(2023, 12, 11, 9, 54, 49, 779, DateTimeKind.Local).AddTicks(7976), new DateTime(2023, 12, 11, 9, 54, 49, 779, DateTimeKind.Local).AddTicks(7976), "Project" },
+                    { (byte)3, new DateTime(2023, 12, 11, 9, 54, 49, 779, DateTimeKind.Local).AddTicks(7978), new DateTime(2023, 12, 11, 9, 54, 49, 779, DateTimeKind.Local).AddTicks(7978), "Task" },
+                    { (byte)4, new DateTime(2023, 12, 11, 9, 54, 49, 779, DateTimeKind.Local).AddTicks(7980), new DateTime(2023, 12, 11, 9, 54, 49, 779, DateTimeKind.Local).AddTicks(7981), "Feature" },
+                    { (byte)5, new DateTime(2023, 12, 11, 9, 54, 49, 779, DateTimeKind.Local).AddTicks(7982), new DateTime(2023, 12, 11, 9, 54, 49, 779, DateTimeKind.Local).AddTicks(7983), "Bug" },
+                    { (byte)6, new DateTime(2023, 12, 11, 9, 54, 49, 779, DateTimeKind.Local).AddTicks(7984), new DateTime(2023, 12, 11, 9, 54, 49, 779, DateTimeKind.Local).AddTicks(7984), "Customer Story" },
+                    { (byte)7, new DateTime(2023, 12, 11, 9, 54, 49, 779, DateTimeKind.Local).AddTicks(7986), new DateTime(2023, 12, 11, 9, 54, 49, 779, DateTimeKind.Local).AddTicks(7987), "TeamMember" }
                 });
 
             migrationBuilder.InsertData(
@@ -286,14 +287,14 @@ namespace Surface_DataAccessLayer.Migrations
                 columns: new[] { "Id", "CreatedOn", "ModifiedOn", "Name" },
                 values: new object[,]
                 {
-                    { (byte)1, new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5136), new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5136), "ProjectManager" },
-                    { (byte)2, new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5138), new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5139), "ProjectMember" },
-                    { (byte)3, new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5140), new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5141), "ProjectViewer" },
-                    { (byte)4, new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5142), new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5142), "ProjectAdmin" },
-                    { (byte)5, new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5144), new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5144), "TeamLeader" },
-                    { (byte)6, new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5145), new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5146), "Developer" },
-                    { (byte)7, new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5147), new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5148), "QAEngineer" },
-                    { (byte)8, new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5149), new DateTime(2023, 11, 24, 5, 8, 12, 98, DateTimeKind.Utc).AddTicks(5149), "BusinessAnalyst" }
+                    { (byte)1, new DateTime(2023, 12, 11, 4, 24, 49, 781, DateTimeKind.Utc).AddTicks(8480), new DateTime(2023, 12, 11, 4, 24, 49, 781, DateTimeKind.Utc).AddTicks(8480), "ProjectManager" },
+                    { (byte)2, new DateTime(2023, 12, 11, 4, 24, 49, 781, DateTimeKind.Utc).AddTicks(8482), new DateTime(2023, 12, 11, 4, 24, 49, 781, DateTimeKind.Utc).AddTicks(8482), "ProjectMember" },
+                    { (byte)3, new DateTime(2023, 12, 11, 4, 24, 49, 781, DateTimeKind.Utc).AddTicks(8484), new DateTime(2023, 12, 11, 4, 24, 49, 781, DateTimeKind.Utc).AddTicks(8484), "ProjectViewer" },
+                    { (byte)4, new DateTime(2023, 12, 11, 4, 24, 49, 781, DateTimeKind.Utc).AddTicks(8486), new DateTime(2023, 12, 11, 4, 24, 49, 781, DateTimeKind.Utc).AddTicks(8486), "ProjectAdmin" },
+                    { (byte)5, new DateTime(2023, 12, 11, 4, 24, 49, 781, DateTimeKind.Utc).AddTicks(8488), new DateTime(2023, 12, 11, 4, 24, 49, 781, DateTimeKind.Utc).AddTicks(8488), "TeamLeader" },
+                    { (byte)6, new DateTime(2023, 12, 11, 4, 24, 49, 781, DateTimeKind.Utc).AddTicks(8489), new DateTime(2023, 12, 11, 4, 24, 49, 781, DateTimeKind.Utc).AddTicks(8490), "Developer" },
+                    { (byte)7, new DateTime(2023, 12, 11, 4, 24, 49, 781, DateTimeKind.Utc).AddTicks(8491), new DateTime(2023, 12, 11, 4, 24, 49, 781, DateTimeKind.Utc).AddTicks(8492), "QAEngineer" },
+                    { (byte)8, new DateTime(2023, 12, 11, 4, 24, 49, 781, DateTimeKind.Utc).AddTicks(8493), new DateTime(2023, 12, 11, 4, 24, 49, 781, DateTimeKind.Utc).AddTicks(8494), "BusinessAnalyst" }
                 });
 
             migrationBuilder.InsertData(
@@ -301,43 +302,43 @@ namespace Surface_DataAccessLayer.Migrations
                 columns: new[] { "Id", "CreatedOn", "ModifiedOn", "Name", "StatusGroupId" },
                 values: new object[,]
                 {
-                    { (byte)1, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3445), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3448), "Active", (byte)1 },
-                    { (byte)2, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3450), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3451), "Inactive", (byte)1 },
-                    { (byte)3, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3453), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3453), "Reported", (byte)1 },
-                    { (byte)4, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3455), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3455), "Blocked", (byte)1 },
-                    { (byte)5, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3457), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3458), "Deleted", (byte)1 },
-                    { (byte)6, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3459), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3460), "Locked", (byte)1 },
-                    { (byte)7, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3461), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3462), "Planning", (byte)2 },
-                    { (byte)8, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3464), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3464), "Active", (byte)2 },
-                    { (byte)9, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3466), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3466), "On Hold", (byte)2 },
-                    { (byte)10, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3467), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3468), "Completed", (byte)2 },
-                    { (byte)11, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3470), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3470), "Cancelled", (byte)2 },
-                    { (byte)12, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3472), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3472), "To Do", (byte)3 },
-                    { (byte)13, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3474), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3474), "In Progress", (byte)3 },
-                    { (byte)14, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3476), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3476), "Blocked", (byte)3 },
-                    { (byte)15, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3478), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3478), "Completed", (byte)3 },
-                    { (byte)16, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3480), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3480), "Deferred", (byte)3 },
-                    { (byte)17, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3482), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3483), "Idea", (byte)4 },
-                    { (byte)18, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3484), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3485), "Backlog", (byte)4 },
-                    { (byte)19, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3486), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3486), "In Progress", (byte)4 },
-                    { (byte)20, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3488), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3489), "Testing", (byte)4 },
-                    { (byte)21, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3490), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3491), "Released", (byte)4 },
-                    { (byte)22, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3492), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3493), "Reported", (byte)5 },
-                    { (byte)23, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3494), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3495), "In Progress", (byte)5 },
-                    { (byte)24, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3496), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3497), "Reproduced", (byte)5 },
-                    { (byte)25, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3498), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3499), "Fixed", (byte)5 },
-                    { (byte)26, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3500), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3501), "Verified", (byte)5 },
-                    { (byte)27, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3502), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3503), "Pending", (byte)6 },
-                    { (byte)28, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3505), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3505), "Reviewed", (byte)6 },
-                    { (byte)29, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3506), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3507), "In Progress", (byte)6 },
-                    { (byte)30, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3508), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3509), "Closed", (byte)6 },
-                    { (byte)31, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3511), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3511), "Active", (byte)7 },
-                    { (byte)32, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3513), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3513), "On Leave", (byte)7 },
-                    { (byte)33, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3515), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3515), "Pending", (byte)7 },
-                    { (byte)34, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3517), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3517), "Completed", (byte)7 },
-                    { (byte)35, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3519), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3519), "Resigned/Left", (byte)7 },
-                    { (byte)36, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3521), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3521), "Suspended", (byte)7 },
-                    { (byte)37, new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3523), new DateTime(2023, 11, 24, 10, 38, 12, 96, DateTimeKind.Local).AddTicks(3523), "Not Assigned", (byte)7 }
+                    { (byte)1, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(351), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(354), "Active", (byte)1 },
+                    { (byte)2, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(356), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(357), "Inactive", (byte)1 },
+                    { (byte)3, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(358), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(359), "Reported", (byte)1 },
+                    { (byte)4, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(361), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(361), "Blocked", (byte)1 },
+                    { (byte)5, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(363), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(363), "Deleted", (byte)1 },
+                    { (byte)6, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(365), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(365), "Locked", (byte)1 },
+                    { (byte)7, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(367), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(367), "Planning", (byte)2 },
+                    { (byte)8, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(369), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(370), "Active", (byte)2 },
+                    { (byte)9, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(371), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(372), "On Hold", (byte)2 },
+                    { (byte)10, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(373), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(374), "Completed", (byte)2 },
+                    { (byte)11, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(375), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(376), "Cancelled", (byte)2 },
+                    { (byte)12, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(378), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(378), "To Do", (byte)3 },
+                    { (byte)13, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(380), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(380), "In Progress", (byte)3 },
+                    { (byte)14, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(382), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(382), "Blocked", (byte)3 },
+                    { (byte)15, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(384), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(384), "Completed", (byte)3 },
+                    { (byte)16, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(386), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(387), "Deferred", (byte)3 },
+                    { (byte)17, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(388), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(389), "Idea", (byte)4 },
+                    { (byte)18, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(390), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(391), "Backlog", (byte)4 },
+                    { (byte)19, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(392), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(393), "In Progress", (byte)4 },
+                    { (byte)20, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(395), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(395), "Testing", (byte)4 },
+                    { (byte)21, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(397), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(397), "Released", (byte)4 },
+                    { (byte)22, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(399), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(399), "Reported", (byte)5 },
+                    { (byte)23, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(401), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(401), "In Progress", (byte)5 },
+                    { (byte)24, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(403), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(403), "Reproduced", (byte)5 },
+                    { (byte)25, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(405), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(405), "Fixed", (byte)5 },
+                    { (byte)26, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(407), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(407), "Verified", (byte)5 },
+                    { (byte)27, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(409), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(409), "Pending", (byte)6 },
+                    { (byte)28, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(411), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(412), "Reviewed", (byte)6 },
+                    { (byte)29, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(413), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(414), "In Progress", (byte)6 },
+                    { (byte)30, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(415), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(416), "Closed", (byte)6 },
+                    { (byte)31, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(417), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(418), "Active", (byte)7 },
+                    { (byte)32, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(419), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(420), "On Leave", (byte)7 },
+                    { (byte)33, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(422), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(422), "Pending", (byte)7 },
+                    { (byte)34, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(424), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(424), "Completed", (byte)7 },
+                    { (byte)35, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(426), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(426), "Resigned/Left", (byte)7 },
+                    { (byte)36, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(428), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(428), "Suspended", (byte)7 },
+                    { (byte)37, new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(430), new DateTime(2023, 12, 11, 9, 54, 49, 780, DateTimeKind.Local).AddTicks(430), "Not Assigned", (byte)7 }
                 });
 
             migrationBuilder.InsertData(
@@ -345,23 +346,23 @@ namespace Surface_DataAccessLayer.Migrations
                 columns: new[] { "Id", "CreatedOn", "ModifiedOn", "Name", "StatusId" },
                 values: new object[,]
                 {
-                    { (byte)1, new DateTime(2023, 11, 24, 5, 8, 12, 96, DateTimeKind.Utc).AddTicks(5143), new DateTime(2023, 11, 24, 5, 8, 12, 96, DateTimeKind.Utc).AddTicks(5143), "Custom", (byte)1 },
-                    { (byte)2, new DateTime(2023, 11, 24, 5, 8, 12, 96, DateTimeKind.Utc).AddTicks(5145), new DateTime(2023, 11, 24, 5, 8, 12, 96, DateTimeKind.Utc).AddTicks(5146), "Google", (byte)1 }
+                    { (byte)1, new DateTime(2023, 12, 11, 4, 24, 49, 780, DateTimeKind.Utc).AddTicks(2104), new DateTime(2023, 12, 11, 4, 24, 49, 780, DateTimeKind.Utc).AddTicks(2104), "Custom", (byte)1 },
+                    { (byte)2, new DateTime(2023, 12, 11, 4, 24, 49, 780, DateTimeKind.Utc).AddTicks(2106), new DateTime(2023, 12, 11, 4, 24, 49, 780, DateTimeKind.Utc).AddTicks(2107), "Google", (byte)1 }
                 });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "Avatar", "CreatedOn", "Email", "FirstName", "LastName", "LockedOutEndDate", "LoginProviderId", "ModifiedOn", "Password", "Salt", "StatusId", "Token" },
-                values: new object[] { 1L, "", new DateTime(2023, 11, 24, 10, 38, 12, 98, DateTimeKind.Local).AddTicks(441), "admin@gmail.com", "admin", null, null, (byte)1, new DateTime(2023, 11, 24, 10, 38, 12, 98, DateTimeKind.Local).AddTicks(445), "5652DDF6EA419A920A948A4BBA99A1B48B434D1237218FCF8D2DA2DA41E7C0F4046BC10C12ABDA86D09022B2AD1D6F566F82F3DF72CDFAEE40AB154537DFB8FD", "+QA9bkBDYMlaPDTRzIYMoPeMDd9oa9k/Ay4Lg==", (byte)1, null });
+                values: new object[] { 1L, "", new DateTime(2023, 12, 11, 9, 54, 49, 781, DateTimeKind.Local).AddTicks(7450), "admin@gmail.com", "admin", null, null, (byte)1, new DateTime(2023, 12, 11, 9, 54, 49, 781, DateTimeKind.Local).AddTicks(7453), "5652DDF6EA419A920A948A4BBA99A1B48B434D1237218FCF8D2DA2DA41E7C0F4046BC10C12ABDA86D09022B2AD1D6F566F82F3DF72CDFAEE40AB154537DFB8FD", "+QA9bkBDYMlaPDTRzIYMoPeMDd9oa9k/Ay4Lg==", (byte)1, null });
 
             migrationBuilder.InsertData(
                 table: "Projects",
                 columns: new[] { "Id", "ActualEndDate", "ActualStartDate", "Budget", "CreatedBy", "CreatedOn", "Description", "EndDate", "ModifiedBy", "ModifiedOn", "Name", "RepoLink", "StartDate", "StatusId" },
                 values: new object[,]
                 {
-                    { 1L, null, new DateTime(2023, 11, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4918), 5000.0, 1L, new DateTime(2023, 11, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4928), "This is a demo project that all users are in this project", new DateTime(2024, 4, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4921), 1L, new DateTime(2023, 11, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4929), "Surface", null, new DateTime(2023, 11, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4910), (byte)8 },
-                    { 2L, null, new DateTime(2023, 11, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4932), 10000.0, 1L, new DateTime(2023, 11, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4934), "A new development project", new DateTime(2024, 2, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4933), 1L, new DateTime(2023, 11, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4935), "Project A", "https://github.com/projecta", new DateTime(2023, 11, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4931), (byte)8 },
-                    { 3L, null, new DateTime(2023, 11, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4937), 7500.0, 1L, new DateTime(2023, 11, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4939), "Another project for testing", new DateTime(2024, 1, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4938), 1L, new DateTime(2023, 11, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4939), "Project B", "https://github.com/projectb", new DateTime(2023, 11, 24, 10, 38, 12, 99, DateTimeKind.Local).AddTicks(4937), (byte)8 }
+                    { 1L, null, new DateTime(2023, 12, 11, 9, 54, 49, 783, DateTimeKind.Local).AddTicks(2949), 5000.0, 1L, new DateTime(2023, 12, 11, 9, 54, 49, 783, DateTimeKind.Local).AddTicks(2962), "This is a demo project that all users are in this project", new DateTime(2024, 5, 11, 9, 54, 49, 783, DateTimeKind.Local).AddTicks(2951), 1L, new DateTime(2023, 12, 11, 9, 54, 49, 783, DateTimeKind.Local).AddTicks(2963), "Surface", null, new DateTime(2023, 12, 11, 9, 54, 49, 783, DateTimeKind.Local).AddTicks(2946), (byte)8 },
+                    { 2L, null, new DateTime(2023, 12, 11, 9, 54, 49, 783, DateTimeKind.Local).AddTicks(2967), 10000.0, 1L, new DateTime(2023, 12, 11, 9, 54, 49, 783, DateTimeKind.Local).AddTicks(2969), "A new development project", new DateTime(2024, 3, 11, 9, 54, 49, 783, DateTimeKind.Local).AddTicks(2968), 1L, new DateTime(2023, 12, 11, 9, 54, 49, 783, DateTimeKind.Local).AddTicks(2970), "Project A", "https://github.com/projecta", new DateTime(2023, 12, 11, 9, 54, 49, 783, DateTimeKind.Local).AddTicks(2966), (byte)8 },
+                    { 3L, null, new DateTime(2023, 12, 11, 9, 54, 49, 783, DateTimeKind.Local).AddTicks(2972), 7500.0, 1L, new DateTime(2023, 12, 11, 9, 54, 49, 783, DateTimeKind.Local).AddTicks(2974), "Another project for testing", new DateTime(2024, 2, 11, 9, 54, 49, 783, DateTimeKind.Local).AddTicks(2973), 1L, new DateTime(2023, 12, 11, 9, 54, 49, 783, DateTimeKind.Local).AddTicks(2975), "Project B", "https://github.com/projectb", new DateTime(2023, 12, 11, 9, 54, 49, 783, DateTimeKind.Local).AddTicks(2972), (byte)8 }
                 });
 
             migrationBuilder.InsertData(
@@ -369,9 +370,9 @@ namespace Surface_DataAccessLayer.Migrations
                 columns: new[] { "Id", "CreatedBy", "CreatedOn", "ModifiedBy", "ModifiedOn", "Name", "ProjectId" },
                 values: new object[,]
                 {
-                    { 1L, 1L, new DateTime(2023, 11, 24, 10, 38, 12, 101, DateTimeKind.Local).AddTicks(8284), 1L, new DateTime(2023, 11, 24, 10, 38, 12, 101, DateTimeKind.Local).AddTicks(8289), "Design", 1L },
-                    { 2L, 1L, new DateTime(2023, 11, 24, 10, 38, 12, 101, DateTimeKind.Local).AddTicks(8291), 1L, new DateTime(2023, 11, 24, 10, 38, 12, 101, DateTimeKind.Local).AddTicks(8292), "Development", 1L },
-                    { 3L, 1L, new DateTime(2023, 11, 24, 10, 38, 12, 101, DateTimeKind.Local).AddTicks(8293), 1L, new DateTime(2023, 11, 24, 10, 38, 12, 101, DateTimeKind.Local).AddTicks(8294), "Testing", 1L }
+                    { 1L, 1L, new DateTime(2023, 12, 11, 9, 54, 49, 785, DateTimeKind.Local).AddTicks(6494), 1L, new DateTime(2023, 12, 11, 9, 54, 49, 785, DateTimeKind.Local).AddTicks(6498), "Design", 1L },
+                    { 2L, 1L, new DateTime(2023, 12, 11, 9, 54, 49, 785, DateTimeKind.Local).AddTicks(6501), 1L, new DateTime(2023, 12, 11, 9, 54, 49, 785, DateTimeKind.Local).AddTicks(6501), "Development", 1L },
+                    { 3L, 1L, new DateTime(2023, 12, 11, 9, 54, 49, 785, DateTimeKind.Local).AddTicks(6503), 1L, new DateTime(2023, 12, 11, 9, 54, 49, 785, DateTimeKind.Local).AddTicks(6504), "Testing", 1L }
                 });
 
             migrationBuilder.CreateIndex(

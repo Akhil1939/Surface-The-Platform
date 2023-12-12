@@ -9,3 +9,7 @@ export const REGISTER_URL = 'account/register';
 
 //logout url
 export const LOGOUT_URL = 'logout/';
+
+//project paths
+
+export const CREATE_PROJECT= 'project/add'
