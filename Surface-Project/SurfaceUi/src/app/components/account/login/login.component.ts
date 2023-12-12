@@ -4,7 +4,7 @@ import { FormGroup, FormControl, Validators, FormsModule, ReactiveFormsModule } 
 import { Login } from '../../../interfaces/accountInterfaces/login';
 import { AccountService } from '../../../services/account.service';
 import { LanguageService } from '../../../services/common/language.service';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -23,7 +23,8 @@ import { MatInputModule } from '@angular/material/input';
 export class LoginComponent {
   constructor(
     private languageService: LanguageService,
-    private accountService: AccountService
+    private accountService: AccountService,
+    private router:Router 
   ) {}
 
   language: string = this.languageService.getLanguage();
@@ -57,9 +58,10 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       console.log(this.loginForm.value);
       this.accountService.login(this.loginForm.value).subscribe((res) => {
+        this.router.navigate(['/']) 
         console.log(res);
       });
-    } else {
+    } else { 
       console.log('invalid');
     }
   }

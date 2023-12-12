@@ -42,7 +42,7 @@ namespace Surface_BusinessLayer.Services.Architecture
             //hash password
             byte[] salt;
             var HashedPassword = PasswordHelper.HashPassword(dto.Password, out salt);
-            User user = new User
+            User user = new()
             {
                 Email = dto.Email,
                 Password = HashedPassword,
@@ -64,11 +64,7 @@ namespace Surface_BusinessLayer.Services.Architecture
 
 
             //validate token
-            var payload = await GoogleJsonWebSignature.ValidateAsync(dto.Token);
-            if (payload == null)
-            {
-                throw new Exception("login token failed");
-            }
+            var payload = await GoogleJsonWebSignature.ValidateAsync(dto.Token) ?? throw new Exception("login token failed");
             //check for user's existence
             User entity = await GetByEmailAsync(payload.Email); //add status validation
 
@@ -99,11 +95,7 @@ namespace Surface_BusinessLayer.Services.Architecture
 
         public async Task<LoginResponseDTO> Login(LoginDTO dto)
         {
-            User user = await GetByEmailAsync(dto.Email); //add status validation
-            if (user == null)
-            {
-                throw new Exception("User not found");
-            }
+            User user = await GetByEmailAsync(dto.Email) ?? throw new Exception("User not found"); //add status validation
 
             if (user.AccessFailedCount >= 3)
             {

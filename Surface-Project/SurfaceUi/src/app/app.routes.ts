@@ -7,27 +7,32 @@ import { AppLayoutComponent } from './components/app-layout/app-layout.component
 import { RegisterComponent } from './components/account/register/register.component';
 import { LayoutComponent } from './components/account/layout/layout.component';
 import { LoginComponent } from './components/account/login/login.component';
+import { ProjectDetailLayoutComponent } from './components/project/project-detail-layout/project-detail-layout.component';
 
 export const routes: Routes = [
   {
-    path: '',
+    path: 'account',
+    component: LayoutComponent,
     children: [
       {
-        path:'account',
-        component:LayoutComponent,
-        children:[{
-          path:'',
-          redirectTo:'login',
-          pathMatch:'full'
-        },{
-          path:'register',
-          component:RegisterComponent
-        },{
-          path:'login',
-          component:LoginComponent
-        }]
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full',  
       },
-
+      {
+        path: 'register',
+        component: RegisterComponent,
+      },
+      {
+        path: 'login',
+        component: LoginComponent,
+      },
+    ],
+  },
+  {
+    path: '',
+    component: AppLayoutComponent,
+    children: [
       {
         path: 'dashboard',
         component: DashboardComponent,
@@ -38,7 +43,7 @@ export const routes: Routes = [
           {
             path: '',
             redirectTo: 'project',
-            pathMatch:"full"
+            pathMatch: 'full',
           },
           {
             path: 'project',
@@ -46,6 +51,10 @@ export const routes: Routes = [
           },
         ],
       },
+      {
+        path:"project/:id",
+        component:ProjectDetailLayoutComponent,
+      }
     ],
   },
 ];

@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import {
   FormArray,
   FormBuilder,
-  FormControl,
   FormGroup,
   FormsModule,
   ReactiveFormsModule,
@@ -13,7 +12,12 @@ import {
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
-import { iCreateProject, newProject } from '../../../interfaces/project_interfaces/iCreateProject.interface';
+import {
+  iCreateProject,
+  newProject,
+} from '../../../interfaces/project_interfaces/iCreateProject.interface';
+import { ProjectService } from '../../../services/project.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-create-project',
   standalone: true,
@@ -31,41 +35,41 @@ import { iCreateProject, newProject } from '../../../interfaces/project_interfac
 })
 export class CreateProjectComponent {
   createProjectForm: FormGroup = new FormGroup({});
-  
-  project:iCreateProject = newProject;
 
-  constructor(private fb: FormBuilder) {
-    console.log('create project loaded');
-  }
+  project: iCreateProject = newProject;
 
- 
+  constructor(private fb: FormBuilder, private service: ProjectService, private router:Router) {}
+
   ngOnInit() {
     this.createProjectForm = this.fb.group({
-      name: [this.project.name, [Validators.required]], 
-      description:[''],
+      name: [this.project.name, [Validators.required]],
+      description: [''],
       teams: this.fb.array([]),
       startDate: [''],
-      endDate: [''], 
-      repoLink:[''],
+      endDate: [''],
+      repoLink: [''],
       budget: [''],
     });
-    console.log(this.Teams)
-  } 
-  get Teams():FormArray{
-return this.createProjectForm.controls['teams'] as FormArray
+    console.log(this.Teams);
   }
-  AddTeam(){
-    this.Teams.push(this.fb.control('')); 
-    console.log(this.Teams)
+  get Teams(): FormArray {
+    return this.createProjectForm.controls['teams'] as FormArray;
   }
-  RemoveTeam(id:number){
-    this.Teams.controls.splice(id,1)
+  AddTeam() {
+    this.Teams.push(this.fb.control(''));
+    console.log(this.Teams);
+  }
+  RemoveTeam(id: number) {
+    this.Teams.controls.splice(id, 1);
   }
   createProject() {
-    if(this.createProjectForm.valid){
-
+    if (this.createProjectForm.valid) {
       this.project = this.createProjectForm.value;
+      this.service
+        .create(this.project)
+        .subscribe((res) => this.router.navigate(['/project/'+ res.data]));
+    } else {
+      console.log(this.createProjectForm.valid);
     }
-  console.log(this.project)
   }
 }
